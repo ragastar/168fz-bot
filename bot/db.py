@@ -38,6 +38,10 @@ async def _init_tables(db: aiosqlite.Connection) -> None:
             created_at REAL NOT NULL,
             FOREIGN KEY (user_id) REFERENCES users(user_id)
         );
+        CREATE TABLE IF NOT EXISTS settings (
+            key TEXT PRIMARY KEY,
+            value TEXT NOT NULL
+        );
     """)
     await db.commit()
 
@@ -77,6 +81,35 @@ async def count_recent_checks(user_id: int, window_seconds: int = 60) -> int:
     )
     row = await cursor.fetchone()
     return row[0] if row else 0
+
+
+async def get_setting(key: str) -> str | None:
+    db = await get_db()
+    cursor = await db.execute("SELECT value FROM settings WHERE key = ?", (key,))
+    row = await cursor.fetchone()
+    return row[0] if row else None
+
+
+async def set_setting(key: str, value: str) -> None:
+    db = await get_db()
+    await db.execute(
+        "INSERT INTO settings (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value",
+        (key, value),
+    )
+    await db.commit()
+
+
+async def delete_setting(key: str) -> None:
+    db = await get_db()
+    await db.execute("DELETE FROM settings WHERE key = ?", (key,))
+    await db.commit()
+
+
+async def get_all_settings() -> dict[str, str]:
+    db = await get_db()
+    cursor = await db.execute("SELECT key, value FROM settings")
+    rows = await cursor.fetchall()
+    return {row[0]: row[1] for row in rows}
 
 
 async def close_db() -> None:

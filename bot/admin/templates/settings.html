@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% set active = "settings" %}
+{% block title %}Настройки{% endblock %}
+
+{% block content %}
+<h1>⚙ Настройки</h1>
+
+{% if saved %}
+<div class="alert alert-success">Настройки сохранены</div>
+{% endif %}
+
+<div class="card settings-card">
+    <form method="post" action="/admin/settings" class="settings-form">
+        <div class="form-group">
+            <label class="form-label" for="notify_default">Уведомления по умолчанию</label>
+            <input type="text" id="notify_default" name="notify_default"
+                   class="input" placeholder="Telegram chat ID"
+                   value="{{ settings.get('notify_default', '') }}">
+            <span class="form-hint">Общий chat ID для всех типов заявок (если не указан отдельный)</span>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="notify_sign">🪧 Заказ вывески</label>
+            <input type="text" id="notify_sign" name="notify_sign"
+                   class="input" placeholder="Chat ID (или пусто = по умолчанию)"
+                   value="{{ settings.get('notify_sign', '') }}">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="notify_lawyer">⚖ Консультация юриста</label>
+            <input type="text" id="notify_lawyer" name="notify_lawyer"
+                   class="input" placeholder="Chat ID (или пусто = по умолчанию)"
+                   value="{{ settings.get('notify_lawyer', '') }}">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="notify_website">🌐 Русификация сайта</label>
+            <input type="text" id="notify_website" name="notify_website"
+                   class="input" placeholder="Chat ID (или пусто = по умолчанию)"
+                   value="{{ settings.get('notify_website', '') }}">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+</div>
+{% endblock %}

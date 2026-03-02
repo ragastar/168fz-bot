@@ -11,6 +11,7 @@ from bot.admin.auth import (
     verify_password, create_session, delete_session, is_authenticated,
 )
 from bot.admin import analytics
+from bot.db import get_all_settings, set_setting, delete_setting
 
 BASE_DIR = Path(__file__).parent
 
@@ -167,3 +168,39 @@ async def leads_page(
         "total": total,
         "filter_cta": cta_type,
     })
+
+
+# --- Settings ---
+
+SETTING_KEYS = ["notify_default", "notify_sign", "notify_lawyer", "notify_website"]
+
+
+@app.get("/admin/settings", response_class=HTMLResponse)
+async def settings_page(request: Request, saved: bool = False):
+    redirect = _check_auth(request)
+    if redirect:
+        return redirect
+
+    all_settings = await get_all_settings()
+    return templates.TemplateResponse("settings.html", {
+        "request": request,
+        "settings": all_settings,
+        "saved": saved,
+    })
+
+
+@app.post("/admin/settings")
+async def settings_save(request: Request):
+    redirect = _check_auth(request)
+    if redirect:
+        return redirect
+
+    form = await request.form()
+    for key in SETTING_KEYS:
+        value = form.get(key, "").strip()
+        if value:
+            await set_setting(key, value)
+        else:
+            await delete_setting(key)
+
+    return RedirectResponse("/admin/settings?saved=1", status_code=302)
