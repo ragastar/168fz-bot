@@ -16,6 +16,7 @@ jobs:
           script: |
             cd /opt/168fz-bot
             git pull origin master
+            cp -r landing/* /var/www/168fz-landing/
             docker compose up -d --build
             sleep 5
             docker compose logs --tail=20
