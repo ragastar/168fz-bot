@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка по 168-ФЗ — Ваша вывеска соответствует закону?</title>
+    <meta name="description" content="Бесплатная AI-проверка вывесок, меню и рекламы на соответствие Федеральному закону 168-ФЗ о русском языке. Отправьте фото — получите отчёт за 20 секунд.">
+    <meta property="og:title" content="Проверка по 168-ФЗ — AI-аудит за 20 секунд">
+    <meta property="og:description" content="Закон 168-ФЗ вступил в силу. Проверьте вывеску, сайт и соцсети бесплатно.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="#" class="navbar__logo">
+                <span class="navbar__logo-icon">168</span>
+                <span class="navbar__logo-text">ФЗ.check</span>
+            </a>
+            <div class="navbar__links">
+                <a href="#how">Как работает</a>
+                <a href="#law">О законе</a>
+                <a href="#fines">Штрафы</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <a href="https://t.me/fz168_check_bot" class="navbar__cta">Проверить</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero__bg-grid"></div>
+        <div class="container hero__inner">
+            <div class="hero__content">
+                <div class="hero__badge anim-fade" data-delay="0">
+                    <span class="hero__badge-dot"></span>
+                    Закон вступил в силу 1 марта 2026
+                </div>
+                <h1 class="hero__title anim-fade" data-delay="100">
+                    Ваша вывеска<br>
+                    <span class="hero__title-accent">соответствует</span><br>
+                    новому закону?
+                </h1>
+                <p class="hero__subtitle anim-fade" data-delay="200">
+                    Бесплатная AI-проверка за 20 секунд. Фото вывески, ссылка на сайт или текст — подробный отчёт с&nbsp;планом действий.
+                </p>
+                <div class="hero__actions anim-fade" data-delay="300">
+                    <a href="https://t.me/fz168_check_bot" class="btn btn--primary btn--large">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" fill="currentColor"/></svg>
+                        Проверить бесплатно
+                    </a>
+                    <span class="hero__actions-note">Telegram-бот. Без регистрации.</span>
+                </div>
+            </div>
+            <div class="hero__demo anim-fade" data-delay="400">
+                <div class="demo-card">
+                    <div class="demo-card__header">
+                        <span class="demo-card__dot demo-card__dot--red"></span>
+                        <span class="demo-card__dot demo-card__dot--yellow"></span>
+                        <span class="demo-card__dot demo-card__dot--green"></span>
+                        <span class="demo-card__title">Результат проверки</span>
+                    </div>
+                    <div class="demo-card__body">
+                        <div class="demo-item demo-item--violation" data-anim="slide-in" data-delay="600">
+                            <span class="demo-item__badge demo-item__badge--red">Нарушение</span>
+                            <div class="demo-item__text">
+                                <span class="demo-item__original">COFFEE LAB</span>
+                                <svg class="demo-item__arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span class="demo-item__fix">Кофейная лаборатория</span>
+                            </div>
+                        </div>
+                        <div class="demo-item demo-item--violation" data-anim="slide-in" data-delay="800">
+                            <span class="demo-item__badge demo-item__badge--red">Нарушение</span>
+                            <div class="demo-item__text">
+                                <span class="demo-item__original">OPEN 8–22</span>
+                                <svg class="demo-item__arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span class="demo-item__fix">Открыто 8:00–22:00</span>
+                            </div>
+                        </div>
+                        <div class="demo-item demo-item--warning" data-anim="slide-in" data-delay="1000">
+                            <span class="demo-item__badge demo-item__badge--yellow">Уточнить</span>
+                            <div class="demo-item__text">
+                                <span class="demo-item__original">SPA</span>
+                                <span class="demo-item__note">Общепринятая аббревиатура — допустимо</span>
+                            </div>
+                        </div>
+                        <div class="demo-item demo-item--ok" data-anim="slide-in" data-delay="1200">
+                            <span class="demo-item__badge demo-item__badge--green">OK</span>
+                            <div class="demo-item__text">
+                                <span class="demo-item__original">Массаж и уход за телом</span>
+                                <span class="demo-item__note">Русский текст — нарушений нет</span>
+                            </div>
+                        </div>
+                        <div class="demo-card__risk" data-anim="slide-in" data-delay="1400">
+                            <span class="demo-card__risk-label">Финансовый риск</span>
+                            <span class="demo-card__risk-amount">10 000 – 20 000 &#8381;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero__scroll-hint">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 5v14m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+    </header>
+
+    <!-- Stats ticker -->
+    <section class="ticker">
+        <div class="container">
+            <div class="ticker__grid">
+                <div class="ticker__item anim-counter">
+                    <span class="ticker__number" data-target="168">168</span>
+                    <span class="ticker__label">ФЗ — номер закона</span>
+                </div>
+                <div class="ticker__divider"></div>
+                <div class="ticker__item anim-counter">
+                    <span class="ticker__number" data-target="20">20</span>
+                    <span class="ticker__unit">сек</span>
+                    <span class="ticker__label">Время проверки</span>
+                </div>
+                <div class="ticker__divider"></div>
+                <div class="ticker__item anim-counter">
+                    <span class="ticker__number">100 000 &#8381;</span>
+                    <span class="ticker__label">Макс. штраф для юрлиц</span>
+                </div>
+                <div class="ticker__divider"></div>
+                <div class="ticker__item anim-counter">
+                    <span class="ticker__number">4</span>
+                    <span class="ticker__unit">режима</span>
+                    <span class="ticker__label">Фото, сайт, соцсети, текст</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What we check -->
+    <section class="section modes" id="how">
+        <div class="container">
+            <div class="section__header anim-fade">
+                <span class="section__eyebrow">Возможности</span>
+                <h2 class="section__title">Что можно проверить</h2>
+            </div>
+            <div class="modes__grid">
+                <div class="mode-card anim-fade" data-delay="0">
+                    <div class="mode-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="mode-card__title">Фото</h3>
+                    <p class="mode-card__desc">Вывеска, витрина, меню, ценник, табличка — сфотографируйте и отправьте</p>
+                    <span class="mode-card__tag">Claude Vision AI</span>
+                </div>
+                <div class="mode-card anim-fade" data-delay="100">
+                    <div class="mode-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3.6 9h16.8M3.6 15h16.8" stroke="currentColor" stroke-width="2"/><ellipse cx="12" cy="12" rx="4" ry="9" stroke="currentColor" stroke-width="2"/></svg>
+                    </div>
+                    <h3 class="mode-card__title">Сайт</h3>
+                    <p class="mode-card__desc">Навигация, кнопки, заголовки, meta-теги, alt-тексты — полный аудит</p>
+                    <span class="mode-card__tag">DOM-парсинг</span>
+                </div>
+                <div class="mode-card anim-fade" data-delay="200">
+                    <div class="mode-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="mode-card__title">Соцсети</h3>
+                    <p class="mode-card__desc">VK-группа, Telegram-канал — название, описание, посты</p>
+                    <span class="mode-card__tag">VK, Telegram, Instagram</span>
+                </div>
+                <div class="mode-card anim-fade" data-delay="300">
+                    <div class="mode-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="8" y1="13" x2="16" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="17" x2="12" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3 class="mode-card__title">Текст</h3>
+                    <p class="mode-card__desc">Описание товара, пост, карточка услуги — любой текст для публикации</p>
+                    <span class="mode-card__tag">Мгновенный результат</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section section--dark steps-section">
+        <div class="container">
+            <div class="section__header anim-fade">
+                <span class="section__eyebrow">Процесс</span>
+                <h2 class="section__title">Три шага — 20 секунд</h2>
+            </div>
+            <div class="steps">
+                <div class="step anim-fade" data-delay="0">
+                    <div class="step__number-wrap">
+                        <span class="step__number">01</span>
+                        <div class="step__line"></div>
+                    </div>
+                    <div class="step__content">
+                        <h3>Отправьте в бот</h3>
+                        <p>Фото вывески, ссылку на сайт или текст — бот автоматически определит тип проверки</p>
+                    </div>
+                </div>
+                <div class="step anim-fade" data-delay="150">
+                    <div class="step__number-wrap">
+                        <span class="step__number">02</span>
+                        <div class="step__line"></div>
+                    </div>
+                    <div class="step__content">
+                        <h3>AI анализирует</h3>
+                        <p>Искусственный интеллект проверяет каждый текстовый элемент по правилам 168-ФЗ и словарям РАН</p>
+                    </div>
+                </div>
+                <div class="step anim-fade" data-delay="300">
+                    <div class="step__number-wrap">
+                        <span class="step__number">03</span>
+                    </div>
+                    <div class="step__content">
+                        <h3>Получите отчёт</h3>
+                        <p>Подробный отчёт: что исправить, какие штрафы грозят, конкретный план действий с приоритетами</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the law -->
+    <section class="section law-section" id="law">
+        <div class="container">
+            <div class="section__header anim-fade">
+                <span class="section__eyebrow">Закон</span>
+                <h2 class="section__title">Что требует 168-ФЗ</h2>
+                <p class="section__subtitle">Федеральный закон о государственном языке. Главное для бизнеса.</p>
+            </div>
+            <div class="law-grid">
+                <div class="law-card anim-fade" data-delay="0">
+                    <div class="law-card__icon-wrap law-card__icon-wrap--red">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M5 21V7l8-4v18M13 21V3l6 4v14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Вывески</h3>
+                    <p>Все надписи на иностранных языках должны сопровождаться переводом. Русский текст — не менее заметный, чем иностранный.</p>
+                </div>
+                <div class="law-card anim-fade" data-delay="50">
+                    <div class="law-card__icon-wrap law-card__icon-wrap--amber">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 19.5A2.5 2.5 0 016.5 17H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Меню и ценники</h3>
+                    <p>Названия блюд и товаров на иностранных языках — с переводом или пояснением на русском языке.</p>
+                </div>
+                <div class="law-card anim-fade" data-delay="100">
+                    <div class="law-card__icon-wrap law-card__icon-wrap--blue">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Реклама</h3>
+                    <p>Рекламные тексты и слоганы на иностранном языке — с обязательным переводом на русский.</p>
+                </div>
+                <div class="law-card anim-fade" data-delay="150">
+                    <div class="law-card__icon-wrap law-card__icon-wrap--green">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3.6 9h16.8M3.6 15h16.8" stroke="currentColor" stroke-width="2"/><ellipse cx="12" cy="12" rx="4" ry="9" stroke="currentColor" stroke-width="2"/></svg>
+                    </div>
+                    <h3>Сайты</h3>
+                    <p>Сайты российских компаний для российских потребителей должны иметь русскоязычную версию.</p>
+                </div>
+                <div class="law-card law-card--ok anim-fade" data-delay="200">
+                    <div class="law-card__icon-wrap law-card__icon-wrap--muted">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3>Можно без перевода</h3>
+                    <p>Зарегистрированные товарные знаки (Nike, Apple, Samsung) и общепринятые аббревиатуры (Wi-Fi, WC, GPS, SPA).</p>
+                </div>
+                <div class="law-card law-card--warn anim-fade" data-delay="250">
+                    <div class="law-card__icon-wrap law-card__icon-wrap--muted">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3>Важный нюанс</h3>
+                    <p>Транслитерация не считается переводом. «Кофи Лэб» &#8800; перевод «Coffee Lab». Правильно: «Кофейная лаборатория».</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fines -->
+    <section class="section section--dark fines-section" id="fines">
+        <div class="container">
+            <div class="section__header anim-fade">
+                <span class="section__eyebrow">Штрафы</span>
+                <h2 class="section__title">Сколько стоит нарушение</h2>
+            </div>
+            <div class="fines-grid anim-fade" data-delay="100">
+                <div class="fine-card">
+                    <div class="fine-card__who">Должностные лица</div>
+                    <div class="fine-card__amounts">
+                        <div class="fine-card__row">
+                            <span class="fine-card__label">Первое</span>
+                            <span class="fine-card__value">3 000 – 5 000 &#8381;</span>
+                        </div>
+                        <div class="fine-card__row fine-card__row--repeat">
+                            <span class="fine-card__label">Повторное</span>
+                            <span class="fine-card__value">5 000 – 10 000 &#8381;</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fine-card fine-card--accent">
+                    <div class="fine-card__who">ИП</div>
+                    <div class="fine-card__amounts">
+                        <div class="fine-card__row">
+                            <span class="fine-card__label">Первое</span>
+                            <span class="fine-card__value">10 000 – 20 000 &#8381;</span>
+                        </div>
+                        <div class="fine-card__row fine-card__row--repeat">
+                            <span class="fine-card__label">Повторное</span>
+                            <span class="fine-card__value">20 000 – 50 000 &#8381;</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fine-card fine-card--danger">
+                    <div class="fine-card__who">Юридические лица</div>
+                    <div class="fine-card__amounts">
+                        <div class="fine-card__row">
+                            <span class="fine-card__label">Первое</span>
+                            <span class="fine-card__value">20 000 – 50 000 &#8381;</span>
+                        </div>
+                        <div class="fine-card__row fine-card__row--repeat">
+                            <span class="fine-card__label">Повторное</span>
+                            <span class="fine-card__value">50 000 – 100 000 &#8381;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fines-warning anim-fade" data-delay="200">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="2"/><line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg>
+                <p>Штраф за <strong>каждое</strong> нарушение отдельно. 3 вывески = 3 штрафа.<br>Переходный период — до 1 июня 2026 (предупреждение при первом нарушении).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <div class="section__header anim-fade">
+                <span class="section__eyebrow">Вопросы</span>
+                <h2 class="section__title">Частые вопросы</h2>
+            </div>
+            <div class="faq-list anim-fade" data-delay="100">
+                <details class="faq-item">
+                    <summary>
+                        <span>Нужно ли убирать английское название с вывески?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>Нет. Достаточно добавить перевод на русский язык. Русский текст должен быть не менее заметным, чем иностранный — тот же размер шрифта, цвет, расположение.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>
+                        <span>А как же бренды — Nike, IKEA, McDonald's?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>Зарегистрированные товарные знаки можно использовать без перевода. Но описательная часть (например, &laquo;магазин спортивной одежды&raquo;) — на русском.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>
+                        <span>Мы кофейня. &laquo;Latte&raquo; и &laquo;Cappuccino&raquo; нужно переводить?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>Да, названия блюд и напитков на иностранном языке должны сопровождаться пояснением на русском: &laquo;Латте&raquo;, &laquo;Капучино&raquo;.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>
+                        <span>Кто будет проверять и штрафовать?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>Роспотребнадзор и ФАС. Проверки — плановые и по жалобам граждан. Массовых рейдов не будет, но жалобы конкурентов — реальный риск.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>
+                        <span>С какой даты начнут штрафовать?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>Закон вступил в силу 1 марта 2026. Переходный период с предупреждениями — до 1 июня 2026. После — штрафы без предупреждений.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>
+                        <span>Это касается интернет-магазинов?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>Да. Сайты российских компаний, ориентированные на российских потребителей, должны иметь полноценную русскоязычную версию.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>
+                        <span>Wi-Fi, WC, SPA — нужно переводить?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>Нет. Общепринятые международные аббревиатуры и термины допустимы без перевода.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>
+                        <span>Что если у меня несколько нарушений?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>Штраф за каждое нарушение отдельно. 5 вывесок без перевода = 5 штрафов. Для юрлица это может быть от 100&nbsp;000&nbsp;&#8381;.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>
+                        <span>Насколько точен ваш бот?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>Бот использует Claude AI и даёт предварительную оценку. Это не юридическое заключение, а экспресс-аудит. Для точной оценки рекомендуем консультацию юриста.</p>
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary>
+                        <span>Это бесплатно?</span>
+                        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </summary>
+                    <div class="faq-item__answer">
+                        <p>Да, проверка полностью бесплатная.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section cta-section">
+        <div class="container cta-section__inner">
+            <div class="cta-section__content anim-fade">
+                <h2 class="cta-section__title">Не ждите проверку.<br>Проверьте себя сами.</h2>
+                <p class="cta-section__desc">Бесплатный AI-аудит за 20 секунд. Без регистрации, без ограничений.</p>
+                <a href="https://t.me/fz168_check_bot" class="btn btn--primary btn--large btn--glow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" fill="currentColor"/></svg>
+                    Открыть бот в Telegram
+                </a>
+            </div>
+            <div class="cta-section__decoration">
+                <div class="cta-orbit">
+                    <div class="cta-orbit__ring cta-orbit__ring--1"></div>
+                    <div class="cta-orbit__ring cta-orbit__ring--2"></div>
+                    <div class="cta-orbit__ring cta-orbit__ring--3"></div>
+                    <div class="cta-orbit__center">168</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__left">
+                <span class="footer__logo">168ФЗ.check</span>
+                <p>AI-помощник для бизнеса</p>
+            </div>
+            <div class="footer__right">
+                <p class="footer__disclaimer">Сервис носит информационный характер и не является юридической консультацией.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
