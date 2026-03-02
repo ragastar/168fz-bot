@@ -3,11 +3,15 @@ from aiogram.types import CallbackQuery
 
 import logging
 
-from bot.db import ensure_user, save_lead, get_setting, get_db
+from bot.config import settings
+from bot.db import ensure_user, save_lead, get_setting, get_db, count_total_checks
 from bot.keyboards.main_menu import get_main_menu
+from bot.keyboards.subscription import get_subscribe_keyboard
+from bot.services.subscription import check_channel_subscription
 from bot.texts.law import LAW_TEXT
 from bot.texts.fines import FINES_TEXT
 from bot.texts.checklist import CHECKLIST_TEXT
+from bot.texts.subscription import SUBSCRIPTION_CONFIRMED_TEXT, SUBSCRIPTION_NOT_FOUND_TEXT
 
 router = Router()
 log = logging.getLogger(__name__)
@@ -62,6 +66,36 @@ async def cb_info_fines(callback: CallbackQuery) -> None:
 async def cb_info_checklist(callback: CallbackQuery) -> None:
     await callback.message.answer(CHECKLIST_TEXT, parse_mode="HTML")
     await callback.answer()
+
+
+@router.callback_query(F.data == "check_subscription")
+async def cb_check_subscription(callback: CallbackQuery) -> None:
+    user = callback.from_user
+    subscribed = await check_channel_subscription(callback.bot, user.id)
+
+    if subscribed:
+        total = await count_total_checks(user.id)
+        remaining = max(0, settings.subscriber_checks - total)
+        word = _pluralize_checks(remaining)
+        await callback.message.answer(
+            SUBSCRIPTION_CONFIRMED_TEXT.format(remaining=remaining, word=word),
+            parse_mode="HTML",
+        )
+    else:
+        await callback.message.answer(
+            SUBSCRIPTION_NOT_FOUND_TEXT,
+            reply_markup=get_subscribe_keyboard(),
+            parse_mode="HTML",
+        )
+    await callback.answer()
+
+
+def _pluralize_checks(n: int) -> str:
+    if n % 10 == 1 and n % 100 != 11:
+        return "проверка"
+    if 2 <= n % 10 <= 4 and not (12 <= n % 100 <= 14):
+        return "проверки"
+    return "проверок"
 
 
 CTA_LABELS = {

@@ -89,6 +89,16 @@ async def count_recent_checks(user_id: int, window_seconds: int = 60) -> int:
     return row[0] if row else 0
 
 
+async def count_total_checks(user_id: int) -> int:
+    db = await get_db()
+    cursor = await db.execute(
+        "SELECT COUNT(*) FROM checks WHERE user_id = ?",
+        (user_id,),
+    )
+    row = await cursor.fetchone()
+    return row[0] if row else 0
+
+
 async def get_setting(key: str) -> str | None:
     db = await get_db()
     cursor = await db.execute("SELECT value FROM settings WHERE key = ?", (key,))

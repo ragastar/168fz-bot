@@ -13,6 +13,9 @@ class Settings(BaseSettings):
     db_path: str = _default_db
     rate_limit_per_minute: int = 3
     admin_password: str = ""
+    channel_id: str = "@neonboutique"
+    free_checks: int = 1
+    subscriber_checks: int = 4
 
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 

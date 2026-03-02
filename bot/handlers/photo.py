@@ -7,9 +7,12 @@ from aiogram.types import Message
 from bot.config import settings
 from bot.db import ensure_user, save_check, count_recent_checks
 from bot.keyboards.report import get_report_keyboard
+from bot.keyboards.subscription import get_subscribe_keyboard
 from bot.services.llm import analyze_image
 from bot.services.prompts import PHOTO_PROMPT
 from bot.services.report import parse_llm_response, format_report, get_verdict_color
+from bot.services.subscription import check_access
+from bot.texts.subscription import SUBSCRIBE_TEXT, LIMIT_EXHAUSTED_TEXT
 
 log = logging.getLogger(__name__)
 router = Router()
@@ -19,6 +22,15 @@ router = Router()
 async def handle_photo(message: Message, bot: Bot) -> None:
     user = message.from_user
     await ensure_user(user.id, user.username, user.first_name)
+
+    # Access check (subscription / limit)
+    access = await check_access(bot, user.id)
+    if not access.allowed:
+        if access.reason == "not_subscribed":
+            await message.answer(SUBSCRIBE_TEXT, reply_markup=get_subscribe_keyboard(), parse_mode="HTML")
+        else:
+            await message.answer(LIMIT_EXHAUSTED_TEXT, parse_mode="HTML")
+        return
 
     # Rate limiting
     recent = await count_recent_checks(user.id)

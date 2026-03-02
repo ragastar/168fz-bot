@@ -1,12 +1,15 @@
 import logging
 import re
 
-from aiogram import Router, F
+from aiogram import Router, F, Bot
 from aiogram.types import Message
 
 from bot.config import settings
 from bot.db import ensure_user, save_check, count_recent_checks
 from bot.keyboards.report import get_report_keyboard
+from bot.keyboards.subscription import get_subscribe_keyboard
+from bot.services.subscription import check_access
+from bot.texts.subscription import SUBSCRIBE_TEXT, LIMIT_EXHAUSTED_TEXT
 from bot.services.llm import analyze_text
 from bot.services.parser import detect_url_type, parse_website, parse_vk, parse_telegram
 from bot.services.prompts import WEBSITE_PROMPT
@@ -32,9 +35,18 @@ def _normalize_url(url: str) -> str:
 
 
 @router.message(F.text.regexp(URL_PATTERN))
-async def handle_url(message: Message) -> None:
+async def handle_url(message: Message, bot: Bot) -> None:
     user = message.from_user
     await ensure_user(user.id, user.username, user.first_name)
+
+    # Access check (subscription / limit)
+    access = await check_access(bot, user.id)
+    if not access.allowed:
+        if access.reason == "not_subscribed":
+            await message.answer(SUBSCRIBE_TEXT, reply_markup=get_subscribe_keyboard(), parse_mode="HTML")
+        else:
+            await message.answer(LIMIT_EXHAUSTED_TEXT, parse_mode="HTML")
+        return
 
     # Extract first URL from message
     match = URL_PATTERN.search(message.text)
