@@ -3,7 +3,7 @@ from aiogram.types import CallbackQuery
 
 import logging
 
-from bot.db import ensure_user, save_lead, get_setting
+from bot.db import ensure_user, save_lead, get_setting, get_db
 from bot.keyboards.main_menu import get_main_menu
 from bot.texts.law import LAW_TEXT
 from bot.texts.fines import FINES_TEXT
@@ -106,11 +106,29 @@ async def cb_cta(callback: CallbackQuery) -> None:
         label = CTA_LABELS.get(callback.data, cta_type)
         username = f"@{user.username}" if user.username else f"id:{user.id}"
         name = user.first_name or "—"
+
+        # Подтягиваем контекст последней проверки
+        db = await get_db()
+        cur = await db.execute(
+            "SELECT input_type, input_data FROM checks WHERE user_id = ? ORDER BY created_at DESC LIMIT 1",
+            (user.id,),
+        )
+        last_check = await cur.fetchone()
+        context_line = ""
+        if last_check and last_check[1]:
+            check_type = last_check[0]
+            data = last_check[1]
+            if check_type == "url":
+                context_line = f"\nПроверял: {data}"
+            else:
+                context_line = f"\nПроверял ({check_type}): {data[:100]}"
+
         admin_text = (
             f"📥 <b>Новый лид</b>\n\n"
             f"Услуга: {label}\n"
             f"Контакт: {username}\n"
             f"Имя: {name}"
+            f"{context_line}"
         )
         try:
             await callback.bot.send_message(

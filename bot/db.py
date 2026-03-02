@@ -44,6 +44,12 @@ async def _init_tables(db: aiosqlite.Connection) -> None:
         );
     """)
     await db.commit()
+    # Migration: add input_data column to checks if missing
+    try:
+        await db.execute("ALTER TABLE checks ADD COLUMN input_data TEXT")
+        await db.commit()
+    except Exception:
+        pass  # column already exists
 
 
 async def ensure_user(user_id: int, username: str | None, first_name: str | None) -> None:
@@ -55,11 +61,11 @@ async def ensure_user(user_id: int, username: str | None, first_name: str | None
     await db.commit()
 
 
-async def save_check(user_id: int, input_type: str, result_color: str | None) -> None:
+async def save_check(user_id: int, input_type: str, result_color: str | None, input_data: str | None = None) -> None:
     db = await get_db()
     await db.execute(
-        "INSERT INTO checks (user_id, input_type, result_color, created_at) VALUES (?, ?, ?, ?)",
-        (user_id, input_type, result_color, time.time()),
+        "INSERT INTO checks (user_id, input_type, result_color, created_at, input_data) VALUES (?, ?, ?, ?, ?)",
+        (user_id, input_type, result_color, time.time(), input_data),
     )
     await db.commit()
 

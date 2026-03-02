@@ -121,7 +121,16 @@ async def get_recent_leads(
     db = await get_db()
     query = """
         SELECT l.id, l.user_id, u.username, l.cta_type,
-               datetime(l.created_at, 'unixepoch') as created
+               datetime(l.created_at, 'unixepoch') as created,
+               (SELECT c.input_type FROM checks c
+                WHERE c.user_id = l.user_id AND c.created_at <= l.created_at
+                ORDER BY c.created_at DESC LIMIT 1) as last_check_type,
+               (SELECT c.result_color FROM checks c
+                WHERE c.user_id = l.user_id AND c.created_at <= l.created_at
+                ORDER BY c.created_at DESC LIMIT 1) as last_check_color,
+               (SELECT c.input_data FROM checks c
+                WHERE c.user_id = l.user_id AND c.created_at <= l.created_at
+                ORDER BY c.created_at DESC LIMIT 1) as last_check_data
         FROM leads l LEFT JOIN users u ON l.user_id = u.user_id
     """
     params: list = []

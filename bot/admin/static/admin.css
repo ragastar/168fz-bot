@@ -324,6 +324,26 @@ h1 {
     width: 100%;
 }
 
+/* --- Lead context --- */
+.lead-context {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.lead-context a {
+    word-break: break-all;
+    font-size: 0.85rem;
+}
+
+.context-text {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+}
+
+.text-dim { color: var(--text-dim); }
+
 .alert-success {
     background: rgba(34, 197, 94, 0.15);
     color: #86efac;

@@ -26,6 +26,7 @@
             <th>#</th>
             <th>User</th>
             <th>Тип CTA</th>
+            <th>Контекст</th>
             <th>Дата</th>
         </tr>
     </thead>
@@ -35,10 +36,27 @@
             <td>{{ l.id }}</td>
             <td>{% if l.username %}@{{ l.username }}{% else %}{{ l.user_id }}{% endif %}</td>
             <td><span class="tag tag-{{ l.cta_type }}">{{ l.cta_type }}</span></td>
+            <td class="lead-context">
+                {% if l.last_check_type %}
+                <span class="tag tag-{{ l.last_check_type }}">{{ l.last_check_type }}</span>
+                {% if l.last_check_color %}
+                <span class="dot dot-{{ l.last_check_color }}"></span>
+                {% endif %}
+                {% if l.last_check_data %}
+                    {% if l.last_check_type == 'url' %}
+                    <a href="{{ l.last_check_data }}" target="_blank" rel="noopener">{{ l.last_check_data[:60] }}{% if l.last_check_data|length > 60 %}…{% endif %}</a>
+                    {% else %}
+                    <span class="context-text">{{ l.last_check_data[:80] }}{% if l.last_check_data|length > 80 %}…{% endif %}</span>
+                    {% endif %}
+                {% endif %}
+                {% else %}
+                <span class="text-dim">—</span>
+                {% endif %}
+            </td>
             <td>{{ l.created }}</td>
         </tr>
         {% else %}
-        <tr><td colspan="4" class="empty">Нет данных</td></tr>
+        <tr><td colspan="5" class="empty">Нет данных</td></tr>
         {% endfor %}
     </tbody>
 </table>

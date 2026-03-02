@@ -48,12 +48,12 @@ async def handle_photo(message: Message, bot: Bot) -> None:
             await wait_msg.edit_text(
                 "😔 Не удалось обработать ответ. Попробуйте ещё раз или отправьте другое фото."
             )
-            await save_check(user.id, "photo", None)
+            await save_check(user.id, "photo", None, input_data=message.caption)
             return
 
         report = format_report(data)
         color = get_verdict_color(data)
-        await save_check(user.id, "photo", color)
+        await save_check(user.id, "photo", color, input_data=message.caption)
 
         await wait_msg.delete()
         await message.answer(report, reply_markup=get_report_keyboard(), parse_mode="HTML")

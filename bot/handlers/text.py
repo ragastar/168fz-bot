@@ -54,12 +54,12 @@ async def handle_text(message: Message) -> None:
             await wait_msg.edit_text(
                 "😔 Не удалось обработать ответ. Попробуйте ещё раз."
             )
-            await save_check(user.id, "text", None)
+            await save_check(user.id, "text", None, input_data=text[:200])
             return
 
         report = format_report(data)
         color = get_verdict_color(data)
-        await save_check(user.id, "text", color)
+        await save_check(user.id, "text", color, input_data=text[:200])
 
         await wait_msg.delete()
         await message.answer(report, reply_markup=get_report_keyboard(), parse_mode="HTML")
