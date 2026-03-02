@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% set active = "dashboard" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<h1>Dashboard</h1>
+
+<div class="cards">
+    <div class="card">
+        <div class="card-value">{{ summary.total_users }}</div>
+        <div class="card-label">Юзеров</div>
+    </div>
+    <div class="card">
+        <div class="card-value">{{ summary.total_checks }}</div>
+        <div class="card-label">Проверок</div>
+    </div>
+    <div class="card">
+        <div class="card-value">{{ summary.total_leads }}</div>
+        <div class="card-label">Лидов</div>
+    </div>
+    <div class="card">
+        <div class="card-value">{{ summary.conversion }}%</div>
+        <div class="card-label">Конверсия</div>
+    </div>
+</div>
+
+<div class="charts-grid">
+    <div class="chart-box">
+        <h3>Активность за 30 дней</h3>
+        <canvas id="activityChart"></canvas>
+    </div>
+    <div class="chart-box">
+        <h3>Проверки по типу</h3>
+        <canvas id="typeChart"></canvas>
+    </div>
+    <div class="chart-box">
+        <h3>Результаты проверок</h3>
+        <canvas id="colorChart"></canvas>
+    </div>
+    <div class="chart-box">
+        <h3>Лиды по типу</h3>
+        <canvas id="leadsChart"></canvas>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const usersByDay = {{ users_by_day | safe }};
+    const checksByDay = {{ checks_by_day | safe }};
+    const checksByType = {{ checks_by_type | safe }};
+    const checksByColor = {{ checks_by_color | safe }};
+    const leadsByType = {{ leads_by_type | safe }};
+</script>
+<script src="/admin/static/admin.js"></script>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% set active = "checks" %}
+{% block title %}Проверки{% endblock %}
+
+{% block content %}
+<h1>Проверки <span class="badge">{{ total }}</span></h1>
+
+<div class="filters">
+    <form method="get" action="/admin/checks" class="filter-form">
+        <select name="type" class="input input-sm">
+            <option value="">Все типы</option>
+            <option value="photo" {% if filter_type == 'photo' %}selected{% endif %}>photo</option>
+            <option value="text" {% if filter_type == 'text' %}selected{% endif %}>text</option>
+            <option value="url" {% if filter_type == 'url' %}selected{% endif %}>url</option>
+        </select>
+        <select name="color" class="input input-sm">
+            <option value="">Все результаты</option>
+            <option value="red" {% if filter_color == 'red' %}selected{% endif %}>red</option>
+            <option value="yellow" {% if filter_color == 'yellow' %}selected{% endif %}>yellow</option>
+            <option value="green" {% if filter_color == 'green' %}selected{% endif %}>green</option>
+        </select>
+        <button type="submit" class="btn btn-sm btn-primary">Фильтр</button>
+        {% if filter_type or filter_color %}
+        <a href="/admin/checks" class="btn btn-sm">Сброс</a>
+        {% endif %}
+    </form>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>User</th>
+            <th>Тип</th>
+            <th>Результат</th>
+            <th>Дата</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in checks %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{% if c.username %}@{{ c.username }}{% else %}{{ c.user_id }}{% endif %}</td>
+            <td><span class="tag tag-{{ c.input_type }}">{{ c.input_type }}</span></td>
+            <td>
+                {% if c.result_color %}
+                <span class="dot dot-{{ c.result_color }}"></span> {{ c.result_color }}
+                {% else %}—{% endif %}
+            </td>
+            <td>{{ c.created }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="5" class="empty">Нет данных</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% if total_pages > 1 %}
+<div class="pagination">
+    {% if page > 1 %}
+    <a href="/admin/checks?page={{ page - 1 }}&type={{ filter_type }}&color={{ filter_color }}" class="btn btn-sm">&laquo; Назад</a>
+    {% endif %}
+    <span class="page-info">{{ page }} / {{ total_pages }}</span>
+    {% if page < total_pages %}
+    <a href="/admin/checks?page={{ page + 1 }}&type={{ filter_type }}&color={{ filter_color }}" class="btn btn-sm">Вперёд &raquo;</a>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

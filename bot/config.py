@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     admin_chat_id: int = 0
     db_path: str = _default_db
     rate_limit_per_minute: int = 3
+    admin_password: str = ""
 
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 

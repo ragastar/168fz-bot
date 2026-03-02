@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% set active = "leads" %}
+{% block title %}Лиды{% endblock %}
+
+{% block content %}
+<h1>Лиды <span class="badge">{{ total }}</span></h1>
+
+<div class="filters">
+    <form method="get" action="/admin/leads" class="filter-form">
+        <select name="cta" class="input input-sm">
+            <option value="">Все типы</option>
+            <option value="sign" {% if filter_cta == 'sign' %}selected{% endif %}>sign</option>
+            <option value="lawyer" {% if filter_cta == 'lawyer' %}selected{% endif %}>lawyer</option>
+            <option value="website" {% if filter_cta == 'website' %}selected{% endif %}>website</option>
+        </select>
+        <button type="submit" class="btn btn-sm btn-primary">Фильтр</button>
+        {% if filter_cta %}
+        <a href="/admin/leads" class="btn btn-sm">Сброс</a>
+        {% endif %}
+    </form>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>User</th>
+            <th>Тип CTA</th>
+            <th>Дата</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for l in leads %}
+        <tr>
+            <td>{{ l.id }}</td>
+            <td>{% if l.username %}@{{ l.username }}{% else %}{{ l.user_id }}{% endif %}</td>
+            <td><span class="tag tag-{{ l.cta_type }}">{{ l.cta_type }}</span></td>
+            <td>{{ l.created }}</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="4" class="empty">Нет данных</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% if total_pages > 1 %}
+<div class="pagination">
+    {% if page > 1 %}
+    <a href="/admin/leads?page={{ page - 1 }}&cta={{ filter_cta }}" class="btn btn-sm">&laquo; Назад</a>
+    {% endif %}
+    <span class="page-info">{{ page }} / {{ total_pages }}</span>
+    {% if page < total_pages %}
+    <a href="/admin/leads?page={{ page + 1 }}&cta={{ filter_cta }}" class="btn btn-sm">Вперёд &raquo;</a>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

@@ -1,6 +1,7 @@
 import asyncio
 import logging
 
+import uvicorn
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 
@@ -37,9 +38,18 @@ async def main() -> None:
         BotCommand(command="checklist", description="Чек-лист самопроверки"),
     ])
 
-    log.info("Bot starting (long-polling)...")
+    # Start admin panel
+    from bot.admin.app import app as admin_app
+
+    config = uvicorn.Config(admin_app, host="0.0.0.0", port=8080, log_level="info")
+    server = uvicorn.Server(config)
+
+    log.info("Bot starting (long-polling) + Admin panel on :8080...")
     try:
-        await dp.start_polling(bot)
+        await asyncio.gather(
+            dp.start_polling(bot),
+            server.serve(),
+        )
     finally:
         await close_db()
         await bot.session.close()
