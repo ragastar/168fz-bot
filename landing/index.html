@@ -128,22 +128,56 @@
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="container navbar__inner">
-            <a href="#" class="navbar__logo">
+            <a href="/" class="navbar__logo">
                 <span class="navbar__logo-icon">168</span>
                 <span class="navbar__logo-text">проверьвывеску.рф</span>
             </a>
-            <div class="navbar__links">
-                <a href="#how">Как работает</a>
-                <a href="#law">О законе</a>
-                <a href="#fines">Штрафы</a>
-                <a href="#faq">FAQ</a>
+            <div class="navbar__links" id="navLinks">
+                <a href="/zakon-168-fz/">О законе</a>
+                <a href="/shtrafy-168-fz/">Штрафы</a>
+                <a href="/chto-delat/">Что делать</a>
+                <div class="navbar__dropdown">
+                    <button class="navbar__dropdown-btn">Ещё <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <div class="navbar__dropdown-menu">
+                        <a href="/zapreshchennye-slova/">Запрещённые слова</a>
+                        <a href="/tovarnyj-znak/">Товарные знаки</a>
+                        <div class="navbar__dropdown-divider"></div>
+                        <span class="navbar__dropdown-label">По отраслям</span>
+                        <a href="/barbershop/">Барбершопы</a>
+                        <a href="/kofenya/">Кофейни и HoReCa</a>
+                        <a href="/internet-magazin/">Интернет-магазины</a>
+                        <div class="navbar__dropdown-divider"></div>
+                        <span class="navbar__dropdown-label">Блог</span>
+                        <a href="/blog/moskva-168-fz/">168-ФЗ в Москве</a>
+                        <a href="/blog/pervye-shtrafy/">Первые штрафы</a>
+                    </div>
+                </div>
             </div>
             <div class="navbar__right">
                 <a href="https://neon.boutique" target="_blank" rel="noopener" class="navbar__partner">при поддержке <span class="neon-text neon-text--sm">Неон Бутик</span></a>
                 <a href="https://t.me/help168fz_bot" class="navbar__cta">Проверить</a>
+                <button class="navbar__burger" id="navBurger" aria-label="Меню"><span></span><span></span><span></span></button>
             </div>
         </div>
     </nav>
+    <div class="navbar__mobile-overlay" id="navMobile">
+        <a href="/zakon-168-fz/">О законе</a>
+        <a href="/shtrafy-168-fz/">Штрафы</a>
+        <a href="/chto-delat/">Что делать</a>
+        <div class="navbar__mobile-divider"></div>
+        <a href="/zapreshchennye-slova/">Запрещённые слова</a>
+        <a href="/tovarnyj-znak/">Товарные знаки</a>
+        <div class="navbar__mobile-divider"></div>
+        <span class="navbar__mobile-label">По отраслям</span>
+        <a href="/barbershop/">Барбершопы</a>
+        <a href="/kofenya/">Кофейни и HoReCa</a>
+        <a href="/internet-magazin/">Интернет-магазины</a>
+        <div class="navbar__mobile-divider"></div>
+        <span class="navbar__mobile-label">Блог</span>
+        <a href="/blog/moskva-168-fz/">168-ФЗ в Москве</a>
+        <a href="/blog/pervye-shtrafy/">Первые штрафы</a>
+        <a href="https://t.me/help168fz_bot" class="navbar__mobile-cta">Проверить вывеску</a>
+    </div>
 
     <!-- Hero -->
     <header class="hero">
@@ -599,6 +633,25 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    // Burger menu
+    const burger = document.getElementById('navBurger');
+    const mobileNav = document.getElementById('navMobile');
+    if (burger && mobileNav) {
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        });
+        mobileNav.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', () => {
+                burger.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+    </script>
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">

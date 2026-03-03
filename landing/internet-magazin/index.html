@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>168-ФЗ для интернет-магазинов: кнопки, навигация, карточки товаров</title>
+    <meta name="description" content="Как интернет-магазинам и маркетплейсам привести сайт в соответствие с 168-ФЗ. Buy Now → Купить, Add to Cart → В корзину. Чеклист для e-commerce.">
+    <link rel="canonical" href="https://xn--b1aaakc4awhjdoz3hm.xn--p1ai/internet-magazin/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="format-detection" content="telephone=no">
+
+    <meta property="og:title" content="168-ФЗ для интернет-магазинов — кнопки, навигация, карточки">
+    <meta property="og:description" content="Buy Now → Купить. Как привести интернет-магазин в соответствие с законом.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://xn--b1aaakc4awhjdoz3hm.xn--p1ai/internet-magazin/">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:image" content="https://xn--b1aaakc4awhjdoz3hm.xn--p1ai/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="168-ФЗ для интернет-магазинов">
+    <meta name="twitter:description" content="Как привести интернет-магазин в соответствие с 168-ФЗ. Чеклист для e-commerce.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://xn--b1aaakc4awhjdoz3hm.xn--p1ai/"},
+        {"@type": "ListItem", "position": 2, "name": "Интернет-магазины", "item": "https://xn--b1aaakc4awhjdoz3hm.xn--p1ai/internet-magazin/"}
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Касается ли 168-ФЗ интернет-магазинов?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Сайты российских компаний, ориентированные на российских потребителей, должны иметь полноценную русскоязычную версию. Кнопки, навигация, описания товаров, карточки — всё на русском."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Нужно ли переводить карточки товаров на маркетплейсах?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Да. Если описание товара на иностранном языке, его нужно продублировать на русском. Это касается Wildberries, Ozon, Яндекс Маркет и других площадок."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .page-hero { padding: 140px 0 64px; position: relative; overflow: hidden; }
+        .page-hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 50%; height: 70%; background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%); opacity: 0.3; pointer-events: none; }
+        .breadcrumbs { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumbs a { color: var(--text-muted); transition: color 0.2s; }
+        .breadcrumbs a:hover { color: var(--accent); }
+        .breadcrumbs__sep { opacity: 0.4; }
+        .page-hero__title { font-family: var(--font-display); font-size: clamp(28px, 4vw, 48px); font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; max-width: 750px; }
+        .page-hero__subtitle { font-size: 18px; color: var(--text-secondary); line-height: 1.7; max-width: 620px; margin-bottom: 32px; }
+        .page-hero__meta { display: flex; align-items: center; gap: 20px; font-size: 13px; color: var(--text-muted); }
+        .page-hero__meta-item { display: flex; align-items: center; gap: 6px; }
+        .industry-tag { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 100px; font-size: 13px; font-weight: 600; margin-bottom: 16px; background: var(--blue-dim); border: 1px solid rgba(59, 130, 246, 0.2); color: var(--blue); }
+        .img-placeholder { position: relative; background: var(--bg-card); border: 2px dashed var(--border-strong); border-radius: var(--radius-lg); overflow: hidden; display: flex; align-items: center; justify-content: center; min-height: 200px; }
+        .img-placeholder--hero { min-height: 340px; margin-bottom: 64px; }
+        .img-placeholder__inner { text-align: center; padding: 40px 24px; }
+        .img-placeholder__icon { width: 48px; height: 48px; margin: 0 auto 16px; color: var(--text-muted); opacity: 0.5; }
+        .img-placeholder__label { font-size: 14px; font-weight: 600; color: var(--text-secondary); margin-bottom: 4px; }
+        .img-placeholder__desc { font-size: 12px; color: var(--text-muted); max-width: 400px; margin: 0 auto; line-height: 1.5; }
+        .img-placeholder__size { display: inline-block; margin-top: 8px; font-size: 11px; color: var(--accent); background: rgba(99, 102, 241, 0.1); padding: 2px 10px; border-radius: 100px; }
+
+        .article { max-width: 780px; margin: 0 auto; padding-bottom: 64px; }
+        .article h2 { font-family: var(--font-display); font-size: clamp(22px, 3vw, 30px); font-weight: 800; margin: 64px 0 20px; letter-spacing: -0.02em; }
+        .article h3 { font-family: var(--font-display); font-size: 18px; font-weight: 700; margin: 40px 0 12px; }
+        .article p { font-size: 16px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 16px; }
+        .article strong { color: var(--text); font-weight: 600; }
+
+        /* UI elements table */
+        .ui-table-wrap { margin: 32px 0; overflow-x: auto; }
+        .ui-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+        .ui-table thead { background: var(--bg-elevated); }
+        .ui-table th { font-family: var(--font-display); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); padding: 14px 20px; text-align: left; border-bottom: 1px solid var(--border); }
+        .ui-table td { padding: 12px 20px; font-size: 15px; border-bottom: 1px solid var(--border); }
+        .ui-table tr:last-child td { border-bottom: none; }
+        .ui-table tbody tr { background: var(--bg-card); transition: background 0.2s; }
+        .ui-table tbody tr:hover { background: var(--bg-card-hover); }
+        .ui-table__original { font-family: var(--font-display); font-weight: 700; font-size: 14px; text-decoration: line-through; text-decoration-color: var(--red); opacity: 0.6; }
+        .ui-table__fix { color: var(--green); font-weight: 600; }
+        .ui-table__where { font-size: 13px; color: var(--text-muted); }
+        .ui-table__category { font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; background: var(--bg-elevated); }
+
+        /* Checklist */
+        .checklist { margin: 32px 0; }
+        .checklist__category { margin-bottom: 24px; }
+        .checklist__category-title { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 15px; font-weight: 700; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+        .checklist__category-icon { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius-sm); flex-shrink: 0; }
+        .checklist__category-icon--blue { background: var(--blue-dim); color: var(--blue); }
+        .checklist__category-icon--green { background: var(--green-dim); color: var(--green); }
+        .checklist__category-icon--amber { background: var(--amber-dim); color: var(--amber); }
+        .checklist__category-icon--accent { background: rgba(99,102,241,0.12); color: var(--accent); }
+        .checklist__items { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+        .checklist__item { display: flex; align-items: flex-start; gap: 10px; padding: 10px 14px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+        .checklist__check { flex-shrink: 0; width: 18px; height: 18px; border-radius: 4px; border: 2px solid var(--border-strong); margin-top: 1px; }
+
+        .alert-box { display: flex; align-items: flex-start; gap: 14px; padding: 20px 24px; border-radius: var(--radius); margin: 32px 0; }
+        .alert-box--amber { background: var(--amber-dim); border: 1px solid rgba(245, 158, 11, 0.15); }
+        .alert-box svg { flex-shrink: 0; margin-top: 2px; color: var(--amber); }
+        .alert-box p { font-size: 14px !important; color: var(--text-secondary); line-height: 1.6; margin: 0 !important; }
+
+        .inline-cta { display: flex; align-items: center; gap: 16px; padding: 24px; background: rgba(99, 102, 241, 0.06); border: 1px solid rgba(99, 102, 241, 0.15); border-radius: var(--radius-lg); margin: 40px 0; }
+        .inline-cta__icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius); background: var(--accent); color: white; flex-shrink: 0; }
+        .inline-cta__text { flex: 1; }
+        .inline-cta__title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+        .inline-cta__desc { font-size: 13px; color: var(--text-secondary); margin: 0 !important; }
+        .inline-cta .btn { flex-shrink: 0; }
+
+        .related { margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--border); }
+        .related__title { font-family: var(--font-display); font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .related__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .related__card { padding: 24px 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-lg); transition: all 0.3s; text-decoration: none; color: inherit; }
+        .related__card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+        .related__card-tag { display: inline-block; font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+        .related__card-title { font-family: var(--font-display); font-size: 14px; font-weight: 700; line-height: 1.4; }
+
+        @media (max-width: 900px) { .related__grid { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) { .page-hero { padding: 110px 0 48px; } .img-placeholder--hero { min-height: 200px; } .inline-cta { flex-direction: column; text-align: center; } .page-hero__meta { flex-direction: column; gap: 8px; } .ui-table th, .ui-table td { padding: 10px 12px; font-size: 13px; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="/" class="navbar__logo">
+                <span class="navbar__logo-icon">168</span>
+                <span class="navbar__logo-text">проверьвывеску.рф</span>
+            </a>
+            <div class="navbar__links" id="navLinks">
+                <a href="/zakon-168-fz/">О законе</a>
+                <a href="/shtrafy-168-fz/">Штрафы</a>
+                <a href="/chto-delat/">Что делать</a>
+                <div class="navbar__dropdown">
+                    <button class="navbar__dropdown-btn">Ещё <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button>
+                    <div class="navbar__dropdown-menu">
+                        <a href="/zapreshchennye-slova/">Запрещённые слова</a>
+                        <a href="/tovarnyj-znak/">Товарные знаки</a>
+                        <div class="navbar__dropdown-divider"></div>
+                        <span class="navbar__dropdown-label">По отраслям</span>
+                        <a href="/barbershop/">Барбершопы</a>
+                        <a href="/kofenya/">Кофейни и HoReCa</a>
+                        <a href="/internet-magazin/" class="active">Интернет-магазины</a>
+                        <div class="navbar__dropdown-divider"></div>
+                        <span class="navbar__dropdown-label">Блог</span>
+                        <a href="/blog/moskva-168-fz/">168-ФЗ в Москве</a>
+                        <a href="/blog/pervye-shtrafy/">Первые штрафы</a>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar__right">
+                <a href="https://neon.boutique" target="_blank" rel="noopener" class="navbar__partner">при поддержке <span class="neon-text neon-text--sm">Неон Бутик</span></a>
+                <a href="https://t.me/help168fz_bot" class="navbar__cta">Проверить</a>
+                <button class="navbar__burger" id="navBurger" aria-label="Меню"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+    <div class="navbar__mobile-overlay" id="navMobile">
+        <a href="/zakon-168-fz/">О законе</a>
+        <a href="/shtrafy-168-fz/">Штрафы</a>
+        <a href="/chto-delat/">Что делать</a>
+        <div class="navbar__mobile-divider"></div>
+        <a href="/zapreshchennye-slova/">Запрещённые слова</a>
+        <a href="/tovarnyj-znak/">Товарные знаки</a>
+        <div class="navbar__mobile-divider"></div>
+        <span class="navbar__mobile-label">По отраслям</span>
+        <a href="/barbershop/">Барбершопы</a>
+        <a href="/kofenya/">Кофейни и HoReCa</a>
+        <a href="/internet-magazin/" class="active">Интернет-магазины</a>
+        <div class="navbar__mobile-divider"></div>
+        <span class="navbar__mobile-label">Блог</span>
+        <a href="/blog/moskva-168-fz/">168-ФЗ в Москве</a>
+        <a href="/blog/pervye-shtrafy/">Первые штрафы</a>
+        <a href="https://t.me/help168fz_bot" class="navbar__mobile-cta">Проверить вывеску</a>
+    </div>
+
+    <header class="page-hero">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="/">Главная</a><span class="breadcrumbs__sep">/</span><span>Интернет-магазины</span>
+            </nav>
+            <div class="industry-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="21" r="1" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="21" r="1" stroke="currentColor" stroke-width="2"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                E-commerce
+            </div>
+            <h1 class="page-hero__title">168-ФЗ для<br>интернет-магазинов:<br><span class="hero__title-accent">кнопки, навигация, карточки</span></h1>
+            <p class="page-hero__subtitle">Buy Now, Add to Cart, Checkout — как привести интернет-магазин в&nbsp;соответствие с&nbsp;законом. Чеклист для e-commerce и маркетплейсов.</p>
+            <div class="page-hero__meta">
+                <span class="page-hero__meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>5 минут чтения</span>
+                <span class="page-hero__meta-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Обновлено 3 марта 2026</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="img-placeholder img-placeholder--hero">
+            <div class="img-placeholder__inner">
+                <svg class="img-placeholder__icon" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M3 16l5-5 4 4 3-3 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div class="img-placeholder__label">Hero-изображение</div>
+                <div class="img-placeholder__desc">Экран ноутбука с интернет-магазином, UI-элементы с двуязычными кнопками, тёмный фон рабочего стола, индиго-подсветка</div>
+                <span class="img-placeholder__size">1440 × 600</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <article class="article">
+            <p><strong>168-ФЗ касается не только вывесок.</strong> Сайты российских компаний для российских потребителей должны иметь полноценную русскоязычную версию. Кнопки, навигация, описания товаров — всё на русском.</p>
+
+            <h2>Что переводить на сайте</h2>
+
+            <div class="ui-table-wrap">
+                <table class="ui-table">
+                    <thead><tr><th>Элемент</th><th>Было</th><th>Стало</th></tr></thead>
+                    <tbody>
+                        <tr><td colspan="3" class="ui-table__category">Кнопки</td></tr>
+                        <tr><td class="ui-table__where">Карточка товара</td><td><span class="ui-table__original">Buy Now</span></td><td><span class="ui-table__fix">Купить</span></td></tr>
+                        <tr><td class="ui-table__where">Карточка товара</td><td><span class="ui-table__original">Add to Cart</span></td><td><span class="ui-table__fix">В корзину</span></td></tr>
+                        <tr><td class="ui-table__where">Корзина</td><td><span class="ui-table__original">Checkout</span></td><td><span class="ui-table__fix">Оформить заказ</span></td></tr>
+                        <tr><td class="ui-table__where">Форма</td><td><span class="ui-table__original">Subscribe</span></td><td><span class="ui-table__fix">Подписаться</span></td></tr>
+                        <tr><td class="ui-table__where">Поиск</td><td><span class="ui-table__original">Search</span></td><td><span class="ui-table__fix">Поиск</span></td></tr>
+
+                        <tr><td colspan="3" class="ui-table__category">Навигация</td></tr>
+                        <tr><td class="ui-table__where">Шапка</td><td><span class="ui-table__original">Home</span></td><td><span class="ui-table__fix">Главная</span></td></tr>
+                        <tr><td class="ui-table__where">Шапка</td><td><span class="ui-table__original">About</span></td><td><span class="ui-table__fix">О нас</span></td></tr>
+                        <tr><td class="ui-table__where">Шапка</td><td><span class="ui-table__original">Contacts</span></td><td><span class="ui-table__fix">Контакты</span></td></tr>
+                        <tr><td class="ui-table__where">Каталог</td><td><span class="ui-table__original">Categories</span></td><td><span class="ui-table__fix">Категории</span></td></tr>
+                        <tr><td class="ui-table__where">Подвал</td><td><span class="ui-table__original">Privacy Policy</span></td><td><span class="ui-table__fix">Политика конфиденциальности</span></td></tr>
+
+                        <tr><td colspan="3" class="ui-table__category">Карточки товаров</td></tr>
+                        <tr><td class="ui-table__where">Лейбл</td><td><span class="ui-table__original">NEW</span></td><td><span class="ui-table__fix">Новинка</span></td></tr>
+                        <tr><td class="ui-table__where">Лейбл</td><td><span class="ui-table__original">SALE</span></td><td><span class="ui-table__fix">Скидка</span></td></tr>
+                        <tr><td class="ui-table__where">Лейбл</td><td><span class="ui-table__original">BESTSELLER</span></td><td><span class="ui-table__fix">Хит продаж</span></td></tr>
+                        <tr><td class="ui-table__where">Описание</td><td><span class="ui-table__original">In Stock</span></td><td><span class="ui-table__fix">В наличии</span></td></tr>
+                        <tr><td class="ui-table__where">Описание</td><td><span class="ui-table__original">Out of Stock</span></td><td><span class="ui-table__fix">Нет в наличии</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="inline-cta">
+                <div class="inline-cta__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3.6 9h16.8M3.6 15h16.8" stroke="currentColor" stroke-width="2"/><ellipse cx="12" cy="12" rx="4" ry="9" stroke="currentColor" stroke-width="2"/></svg></div>
+                <div class="inline-cta__text">
+                    <div class="inline-cta__title">Проверьте свой сайт</div>
+                    <p class="inline-cta__desc">Отправьте ссылку на сайт в бот — AI проверит навигацию, кнопки и карточки за 20 секунд.</p>
+                </div>
+                <a href="https://t.me/help168fz_bot" class="btn btn--primary">Проверить</a>
+            </div>
+
+            <h2>Чеклист для интернет-магазина</h2>
+
+            <div class="checklist">
+                <div class="checklist__category">
+                    <div class="checklist__category-title">
+                        <span class="checklist__category-icon checklist__category-icon--blue"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3.6 9h16.8M3.6 15h16.8" stroke="currentColor" stroke-width="2"/><ellipse cx="12" cy="12" rx="4" ry="9" stroke="currentColor" stroke-width="2"/></svg></span>
+                        Навигация и интерфейс
+                    </div>
+                    <ul class="checklist__items">
+                        <li class="checklist__item"><span class="checklist__check"></span>Все пункты меню — на русском</li>
+                        <li class="checklist__item"><span class="checklist__check"></span>Кнопки действий (купить, в корзину, подписаться) — на русском</li>
+                        <li class="checklist__item"><span class="checklist__check"></span>Фильтры и сортировка — на русском</li>
+                        <li class="checklist__item"><span class="checklist__check"></span>Плейсхолдеры в полях ввода — на русском</li>
+                    </ul>
+                </div>
+                <div class="checklist__category">
+                    <div class="checklist__category-title">
+                        <span class="checklist__category-icon checklist__category-icon--green"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        Карточки товаров
+                    </div>
+                    <ul class="checklist__items">
+                        <li class="checklist__item"><span class="checklist__check"></span>Название товара — на русском (или с переводом)</li>
+                        <li class="checklist__item"><span class="checklist__check"></span>Описание и характеристики — на русском</li>
+                        <li class="checklist__item"><span class="checklist__check"></span>Лейблы (NEW, SALE, BESTSELLER) — на русском</li>
+                        <li class="checklist__item"><span class="checklist__check"></span>Статус наличия — на русском</li>
+                    </ul>
+                </div>
+                <div class="checklist__category">
+                    <div class="checklist__category-title">
+                        <span class="checklist__category-icon checklist__category-icon--amber"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2"/><polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/></svg></span>
+                        SEO и мета-данные
+                    </div>
+                    <ul class="checklist__items">
+                        <li class="checklist__item"><span class="checklist__check"></span>Title и Description — на русском</li>
+                        <li class="checklist__item"><span class="checklist__check"></span>Alt-тексты изображений — на русском</li>
+                        <li class="checklist__item"><span class="checklist__check"></span>URL-адреса — транслитерация или русские</li>
+                    </ul>
+                </div>
+                <div class="checklist__category">
+                    <div class="checklist__category-title">
+                        <span class="checklist__category-icon checklist__category-icon--accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+                        Маркетплейсы
+                    </div>
+                    <ul class="checklist__items">
+                        <li class="checklist__item"><span class="checklist__check"></span>Карточки на Wildberries — описание на русском</li>
+                        <li class="checklist__item"><span class="checklist__check"></span>Карточки на Ozon — характеристики на русском</li>
+                        <li class="checklist__item"><span class="checklist__check"></span>Яндекс Маркет — все поля на русском</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="alert-box alert-box--amber">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="2"/><line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="17" r="0.5" fill="currentColor"/></svg>
+                <p><strong>Названия брендов-товарных знаков</strong> (Nike, Samsung, Apple) можно оставить на латинице. Но описательная часть карточки (цвет, размер, материал) — строго на русском.</p>
+            </div>
+
+            <div class="inline-cta" style="margin-top: 48px;">
+                <div class="inline-cta__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" fill="currentColor"/></svg></div>
+                <div class="inline-cta__text">
+                    <div class="inline-cta__title">Проверьте интернет-магазин за 20 секунд</div>
+                    <p class="inline-cta__desc">Отправьте ссылку — AI проверит все текстовые элементы и покажет нарушения.</p>
+                </div>
+                <a href="https://t.me/help168fz_bot" class="btn btn--primary btn--glow">Открыть бот</a>
+            </div>
+
+            <div class="related">
+                <h2 class="related__title">Связанные темы</h2>
+                <div class="related__grid">
+                    <a href="/chto-delat/" class="related__card"><span class="related__card-tag">Гайд</span><div class="related__card-title">Что делать: пошаговый план за 1 день</div></a>
+                    <a href="/zapreshchennye-slova/" class="related__card"><span class="related__card-tag">Словарь</span><div class="related__card-title">50 запрещённых слов на вывесках</div></a>
+                    <a href="/shtrafy-168-fz/" class="related__card"><span class="related__card-tag">Штрафы</span><div class="related__card-title">Штрафы по 168-ФЗ: от 3 000 до 100 000 ₽</div></a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__left"><span class="footer__logo">проверьвывеску.рф</span><p>AI-помощник для бизнеса</p></div>
+            <div class="footer__center"><span class="footer__supported">При поддержке <a href="https://neon.boutique" target="_blank" rel="noopener" class="neon-text neon-text--sm">Неон Бутик</a></span></div>
+            <div class="footer__right"><p class="footer__disclaimer">Сервис носит информационный характер и не является юридической консультацией.</p></div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=107080742','ym');
+        ym(107080742,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+
+        // Burger menu
+        const burger = document.getElementById('navBurger');
+        const mobileNav = document.getElementById('navMobile');
+        if (burger && mobileNav) {
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('active');
+                mobileNav.classList.toggle('active');
+                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+            });
+            mobileNav.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => {
+                    burger.classList.remove('active');
+                    mobileNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/107080742" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
+</body>
+</html>
