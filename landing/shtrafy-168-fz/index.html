@@ -1086,17 +1086,25 @@
         const burger = document.getElementById('navBurger');
         const mobileNav = document.getElementById('navMobile');
         if (burger && mobileNav) {
+            const closeMobile = () => {
+                burger.classList.remove('active');
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            };
             burger.addEventListener('click', () => {
-                burger.classList.toggle('active');
-                mobileNav.classList.toggle('active');
-                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+                if (mobileNav.classList.contains('active')) {
+                    closeMobile();
+                } else {
+                    burger.classList.add('active');
+                    mobileNav.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+            mobileNav.addEventListener('click', (e) => {
+                if (e.target === mobileNav) closeMobile();
             });
             mobileNav.querySelectorAll('a').forEach(a => {
-                a.addEventListener('click', () => {
-                    burger.classList.remove('active');
-                    mobileNav.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
+                a.addEventListener('click', closeMobile);
             });
         }
     </script>
