@@ -1,0 +1,326 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600" width="1440" height="600">
+  <defs>
+    <!-- Indigo glow -->
+    <radialGradient id="glow1" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.25"/>
+      <stop offset="60%" stop-color="#4f46e5" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0f0e17" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="30%" cy="70%" r="40%">
+      <stop offset="0%" stop-color="#818cf8" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0f0e17" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="screenGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#0f0e17" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Laptop screen gradient -->
+    <linearGradient id="screenBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="laptopBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#374151"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <linearGradient id="btnPrimary" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="btnGreen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <linearGradient id="crossLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ef4444" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#ef4444" stop-opacity="0.8"/>
+      <stop offset="80%" stop-color="#ef4444" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Arrow gradient -->
+    <linearGradient id="arrowGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="20" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="glow-filter">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="screenClip">
+      <rect x="310" y="52" width="820" height="410" rx="4"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1440" height="600" fill="#0f0e17"/>
+  <rect width="1440" height="600" fill="url(#glow1)"/>
+  <rect width="1440" height="600" fill="url(#glow2)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.03">
+    <line x1="0" y1="0" x2="0" y2="600" stroke="#818cf8" stroke-width="1" transform="translate(100,0)"/>
+    <line x1="0" y1="0" x2="0" y2="600" stroke="#818cf8" stroke-width="1" transform="translate(200,0)"/>
+    <line x1="0" y1="0" x2="0" y2="600" stroke="#818cf8" stroke-width="1" transform="translate(300,0)"/>
+    <line x1="0" y1="0" x2="0" y2="600" stroke="#818cf8" stroke-width="1" transform="translate(400,0)"/>
+    <line x1="0" y1="0" x2="0" y2="600" stroke="#818cf8" stroke-width="1" transform="translate(500,0)"/>
+    <line x1="0" y1="0" x2="0" y2="600" stroke="#818cf8" stroke-width="1" transform="translate(600,0)"/>
+    <line x1="0" y1="0" x2="0" y2="600" stroke="#818cf8" stroke-width="1" transform="translate(700,0)"/>
+    <line x1="0" y1="0" x2="0" y2="600" stroke="#818cf8" stroke-width="1" transform="translate(800,0)"/>
+    <line x1="0" y1="0" x2="0" y2="600" stroke="#818cf8" stroke-width="1" transform="translate(900,0)"/>
+    <line x1="0" y1="0" x2="0" y2="600" stroke="#818cf8" stroke-width="1" transform="translate(1000,0)"/>
+    <line x1="0" y1="0" x2="0" y2="600" stroke="#818cf8" stroke-width="1" transform="translate(1100,0)"/>
+    <line x1="0" y1="0" x2="0" y2="600" stroke="#818cf8" stroke-width="1" transform="translate(1200,0)"/>
+    <line x1="0" y1="0" x2="0" y2="600" stroke="#818cf8" stroke-width="1" transform="translate(1300,0)"/>
+  </g>
+
+  <!-- Screen light reflection on desk -->
+  <ellipse cx="720" cy="545" rx="350" ry="30" fill="#6366f1" opacity="0.06"/>
+
+  <!-- === LAPTOP === -->
+  <g filter="url(#shadow)">
+    <!-- Laptop base / keyboard -->
+    <path d="M280 470 L320 510 L1120 510 L1160 470 Z" fill="url(#laptopBody)" stroke="#4b5563" stroke-width="1"/>
+    <!-- Keyboard area hint -->
+    <rect x="420" y="478" width="600" height="4" rx="2" fill="#1f2937" stroke="#374151" stroke-width="0.5"/>
+    <rect x="480" y="486" width="480" height="14" rx="4" fill="#1f2937" stroke="#374151" stroke-width="0.5"/>
+    <!-- Trackpad -->
+    <rect x="650" y="486" width="140" height="14" rx="4" fill="#111827" stroke="#374151" stroke-width="0.5"/>
+
+    <!-- Screen bezel -->
+    <rect x="295" y="38" width="850" height="435" rx="12" fill="#1f2937" stroke="#374151" stroke-width="1.5"/>
+
+    <!-- Screen -->
+    <rect x="310" y="52" width="820" height="410" rx="4" fill="url(#screenBg)"/>
+  </g>
+
+  <!-- === SCREEN CONTENT (clipped) === -->
+  <g clip-path="url(#screenClip)">
+    <!-- Screen background -->
+    <rect x="310" y="52" width="820" height="410" fill="#0f172a"/>
+
+    <!-- === STORE HEADER === -->
+    <rect x="310" y="52" width="820" height="44" fill="#111827"/>
+    <line x1="310" y1="96" x2="1130" y2="96" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Logo area -->
+    <rect x="330" y="62" width="24" height="24" rx="5" fill="#6366f1"/>
+    <text x="342" y="79" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="700">M</text>
+    <text x="362" y="79" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#e2e8f0" font-weight="600">МагазинПро</text>
+
+    <!-- Navigation - OLD english labels with strikethrough -->
+    <g opacity="0.4">
+      <text x="490" y="78" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" text-decoration="line-through">Home</text>
+      <text x="540" y="78" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" text-decoration="line-through">Catalog</text>
+      <text x="600" y="78" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" text-decoration="line-through">About</text>
+    </g>
+    <!-- Navigation - NEW russian labels -->
+    <text x="490" y="78" font-family="system-ui, sans-serif" font-size="11" fill="#e2e8f0" font-weight="500" dx="0" dy="-16">Главная</text>
+    <text x="548" y="78" font-family="system-ui, sans-serif" font-size="11" fill="#e2e8f0" font-weight="500" dx="0" dy="-16">Каталог</text>
+    <text x="610" y="78" font-family="system-ui, sans-serif" font-size="11" fill="#e2e8f0" font-weight="500" dx="0" dy="-16">О нас</text>
+    <text x="665" y="78" font-family="system-ui, sans-serif" font-size="11" fill="#e2e8f0" font-weight="500" dx="0" dy="-16">Контакты</text>
+
+    <!-- Search bar -->
+    <rect x="770" y="62" width="180" height="24" rx="12" fill="#1e293b" stroke="#334155" stroke-width="0.5"/>
+    <text x="790" y="78" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">Поиск...</text>
+    <circle cx="935" cy="74" r="7" fill="none" stroke="#64748b" stroke-width="1.5"/>
+    <line x1="940" y1="79" x2="944" y2="83" stroke="#64748b" stroke-width="1.5"/>
+
+    <!-- Cart icon with russian label -->
+    <rect x="965" y="62" width="70" height="24" rx="12" fill="#6366f1"/>
+    <text x="1000" y="78" font-family="system-ui, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="600">Корзина (2)</text>
+
+    <!-- === MAIN CONTENT AREA === -->
+
+    <!-- Left side: Product cards -->
+    <!-- Section title -->
+    <text x="330" y="122" font-family="system-ui, sans-serif" font-size="13" fill="#f1f5f9" font-weight="700">Популярные товары</text>
+    <text x="330" y="136" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Новинки и хиты продаж</text>
+
+    <!-- Product Card 1 -->
+    <rect x="330" y="148" width="175" height="210" rx="8" fill="#1e293b" stroke="#334155" stroke-width="0.5"/>
+    <!-- Product image placeholder -->
+    <rect x="338" y="156" width="159" height="90" rx="4" fill="#0f172a"/>
+    <rect x="388" y="175" width="60" height="50" rx="4" fill="#334155" opacity="0.5"/>
+    <!-- NEW badge -->
+    <rect x="344" y="162" width="50" height="16" rx="8" fill="#22c55e"/>
+    <text x="369" y="173" font-family="system-ui, sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="700">Новинка</text>
+    <!-- Crossed out old SALE badge -->
+    <g opacity="0.35">
+      <rect x="398" y="162" width="34" height="16" rx="8" fill="#ef4444"/>
+      <text x="415" y="173" font-family="system-ui, sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="700">SALE</text>
+      <line x1="396" y1="170" x2="434" y2="170" stroke="#fff" stroke-width="1.5"/>
+    </g>
+    <!-- Product name -->
+    <text x="346" y="262" font-family="system-ui, sans-serif" font-size="10" fill="#e2e8f0" font-weight="600">Наушники Pro Max</text>
+    <!-- Price -->
+    <text x="346" y="278" font-family="system-ui, sans-serif" font-size="12" fill="#6366f1" font-weight="700">12 990 ₽</text>
+    <!-- Stock status -->
+    <text x="346" y="293" font-family="system-ui, sans-serif" font-size="8" fill="#22c55e">● В наличии</text>
+    <!-- Buy button - Russian -->
+    <rect x="338" y="302" width="159" height="28" rx="6" fill="url(#btnPrimary)"/>
+    <text x="417" y="320" font-family="system-ui, sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="700">В корзину</text>
+    <!-- Old label hint below button -->
+    <text x="417" y="345" font-family="system-ui, sans-serif" font-size="8" fill="#ef4444" text-anchor="middle" opacity="0.5" text-decoration="line-through">Add to Cart</text>
+
+    <!-- Product Card 2 -->
+    <rect x="520" y="148" width="175" height="210" rx="8" fill="#1e293b" stroke="#334155" stroke-width="0.5"/>
+    <rect x="528" y="156" width="159" height="90" rx="4" fill="#0f172a"/>
+    <rect x="573" y="172" width="70" height="55" rx="4" fill="#334155" opacity="0.5"/>
+    <!-- Bestseller badge -->
+    <rect x="534" y="162" width="66" height="16" rx="8" fill="#f59e0b"/>
+    <text x="567" y="173" font-family="system-ui, sans-serif" font-size="8" fill="#0f172a" text-anchor="middle" font-weight="700">Хит продаж</text>
+    <!-- Product name -->
+    <text x="536" y="262" font-family="system-ui, sans-serif" font-size="10" fill="#e2e8f0" font-weight="600">Умная колонка X1</text>
+    <text x="536" y="278" font-family="system-ui, sans-serif" font-size="12" fill="#6366f1" font-weight="700">8 490 ₽</text>
+    <text x="536" y="293" font-family="system-ui, sans-serif" font-size="8" fill="#22c55e">● В наличии</text>
+    <rect x="528" y="302" width="159" height="28" rx="6" fill="url(#btnPrimary)"/>
+    <text x="607" y="320" font-family="system-ui, sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="700">Купить</text>
+    <text x="607" y="345" font-family="system-ui, sans-serif" font-size="8" fill="#ef4444" text-anchor="middle" opacity="0.5" text-decoration="line-through">Buy Now</text>
+
+    <!-- Product Card 3 -->
+    <rect x="710" y="148" width="175" height="210" rx="8" fill="#1e293b" stroke="#334155" stroke-width="0.5"/>
+    <rect x="718" y="156" width="159" height="90" rx="4" fill="#0f172a"/>
+    <rect x="768" y="175" width="55" height="45" rx="4" fill="#334155" opacity="0.5"/>
+    <!-- Скидка badge -->
+    <rect x="724" y="162" width="50" height="16" rx="8" fill="#ef4444"/>
+    <text x="749" y="173" font-family="system-ui, sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="700">Скидка</text>
+    <text x="726" y="262" font-family="system-ui, sans-serif" font-size="10" fill="#e2e8f0" font-weight="600">Фитнес-браслет Z</text>
+    <text x="726" y="278" font-family="system-ui, sans-serif" font-size="12" fill="#6366f1" font-weight="700">3 990 ₽</text>
+    <text x="810" y="278" font-family="system-ui, sans-serif" font-size="9" fill="#64748b" text-decoration="line-through">5 990 ₽</text>
+    <text x="726" y="293" font-family="system-ui, sans-serif" font-size="8" fill="#f59e0b">● Осталось 3 шт.</text>
+    <rect x="718" y="302" width="159" height="28" rx="6" fill="url(#btnPrimary)"/>
+    <text x="797" y="320" font-family="system-ui, sans-serif" font-size="11" fill="white" text-anchor="middle" font-weight="700">В корзину</text>
+    <text x="797" y="345" font-family="system-ui, sans-serif" font-size="8" fill="#ef4444" text-anchor="middle" opacity="0.5" text-decoration="line-through">Add to Cart</text>
+
+    <!-- Right sidebar: Cart / Checkout preview -->
+    <rect x="900" y="110" width="220" height="220" rx="10" fill="#1e293b" stroke="#334155" stroke-width="0.5"/>
+    <text x="920" y="134" font-family="system-ui, sans-serif" font-size="11" fill="#f1f5f9" font-weight="700">Ваша корзина</text>
+    <line x1="910" y1="144" x2="1110" y2="144" stroke="#334155" stroke-width="0.5"/>
+
+    <!-- Cart item 1 -->
+    <rect x="916" y="152" width="30" height="30" rx="4" fill="#0f172a"/>
+    <text x="954" y="165" font-family="system-ui, sans-serif" font-size="9" fill="#e2e8f0">Наушники Pro Max</text>
+    <text x="954" y="177" font-family="system-ui, sans-serif" font-size="9" fill="#6366f1" font-weight="600">12 990 ₽</text>
+
+    <!-- Cart item 2 -->
+    <rect x="916" y="192" width="30" height="30" rx="4" fill="#0f172a"/>
+    <text x="954" y="205" font-family="system-ui, sans-serif" font-size="9" fill="#e2e8f0">Умная колонка X1</text>
+    <text x="954" y="217" font-family="system-ui, sans-serif" font-size="9" fill="#6366f1" font-weight="600">8 490 ₽</text>
+
+    <line x1="910" y1="232" x2="1110" y2="232" stroke="#334155" stroke-width="0.5"/>
+
+    <!-- Total -->
+    <text x="920" y="250" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8">Итого:</text>
+    <text x="1105" y="250" font-family="system-ui, sans-serif" font-size="13" fill="#f1f5f9" text-anchor="end" font-weight="700">21 480 ₽</text>
+
+    <!-- Delivery -->
+    <text x="920" y="268" font-family="system-ui, sans-serif" font-size="9" fill="#64748b">Доставка:</text>
+    <text x="1105" y="268" font-family="system-ui, sans-serif" font-size="9" fill="#22c55e" text-anchor="end">Бесплатно</text>
+
+    <!-- Checkout button -->
+    <rect x="910" y="282" width="200" height="34" rx="8" fill="url(#btnGreen)"/>
+    <text x="1010" y="303" font-family="system-ui, sans-serif" font-size="12" fill="white" text-anchor="middle" font-weight="700">Оформить заказ</text>
+
+    <!-- Old checkout label -->
+    <text x="1010" y="328" font-family="system-ui, sans-serif" font-size="8" fill="#ef4444" text-anchor="middle" opacity="0.45" text-decoration="line-through">Checkout</text>
+
+    <!-- === TRANSFORMATION ARROWS floating === -->
+    <!-- Arrow between old nav and new nav -->
+    <g filter="url(#glow-filter)">
+      <!-- Arrow 1: Home → Главная -->
+      <path d="M500 86 C500 90 490 62 490 58" stroke="url(#arrowGrad)" stroke-width="1.5" fill="none" stroke-dasharray="3,2" opacity="0.7"/>
+    </g>
+
+    <!-- === BOTTOM BAR: Before → After comparison strip === -->
+    <rect x="310" y="380" width="820" height="82" fill="#0c0f1a"/>
+    <line x1="310" y1="380" x2="1130" y2="380" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Before section -->
+    <text x="380" y="405" font-family="system-ui, sans-serif" font-size="10" fill="#ef4444" text-anchor="middle" font-weight="700">БЫЛО</text>
+
+    <!-- Before buttons -->
+    <rect x="330" y="414" width="70" height="20" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.5" opacity="0.6"/>
+    <text x="365" y="428" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle" text-decoration="line-through">Buy Now</text>
+
+    <rect x="410" y="414" width="70" height="20" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.5" opacity="0.6"/>
+    <text x="445" y="428" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle" text-decoration="line-through">Add to Cart</text>
+
+    <rect x="330" y="440" width="70" height="20" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.5" opacity="0.6"/>
+    <text x="365" y="454" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle" text-decoration="line-through">Checkout</text>
+
+    <rect x="410" y="440" width="70" height="20" rx="4" fill="#1e293b" stroke="#334155" stroke-width="0.5" opacity="0.6"/>
+    <text x="445" y="454" font-family="system-ui, sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle" text-decoration="line-through">Subscribe</text>
+
+    <!-- Arrow -->
+    <g opacity="0.8">
+      <line x1="510" y1="435" x2="570" y2="435" stroke="url(#arrowGrad)" stroke-width="2.5"/>
+      <polygon points="570,430 580,435 570,440" fill="#22c55e"/>
+    </g>
+
+    <!-- After section -->
+    <text x="680" y="405" font-family="system-ui, sans-serif" font-size="10" fill="#22c55e" text-anchor="middle" font-weight="700">СТАЛО</text>
+
+    <!-- After buttons -->
+    <rect x="600" y="414" width="70" height="20" rx="4" fill="url(#btnPrimary)"/>
+    <text x="635" y="428" font-family="system-ui, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="600">Купить</text>
+
+    <rect x="680" y="414" width="70" height="20" rx="4" fill="url(#btnPrimary)"/>
+    <text x="715" y="428" font-family="system-ui, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="600">В корзину</text>
+
+    <rect x="600" y="440" width="70" height="20" rx="4" fill="url(#btnGreen)"/>
+    <text x="635" y="454" font-family="system-ui, sans-serif" font-size="8" fill="white" text-anchor="middle" font-weight="600">Оформить</text>
+
+    <rect x="680" y="440" width="70" height="20" rx="4" fill="url(#btnPrimary)"/>
+    <text x="715" y="454" font-family="system-ui, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="600">Подписаться</text>
+
+    <!-- 168-FZ badge in corner -->
+    <rect x="810" y="410" width="100" height="44" rx="8" fill="rgba(99,102,241,0.15)" stroke="#6366f1" stroke-width="1"/>
+    <text x="860" y="430" font-family="system-ui, sans-serif" font-size="9" fill="#a5b4fc" text-anchor="middle" font-weight="600">168-ФЗ</text>
+    <text x="860" y="444" font-family="system-ui, sans-serif" font-size="8" fill="#818cf8" text-anchor="middle">Соответствует</text>
+
+    <!-- Checkmark -->
+    <circle cx="940" cy="435" r="16" fill="#22c55e" opacity="0.15" stroke="#22c55e" stroke-width="1.5"/>
+    <polyline points="932,435 938,441 950,429" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Footer labels -->
+    <text x="1000" y="428" font-family="system-ui, sans-serif" font-size="8" fill="#64748b">Все элементы UI</text>
+    <text x="1000" y="440" font-family="system-ui, sans-serif" font-size="8" fill="#64748b">переведены на</text>
+    <text x="1000" y="452" font-family="system-ui, sans-serif" font-size="9" fill="#e2e8f0" font-weight="600">русский язык ✓</text>
+  </g>
+
+  <!-- Webcam dot -->
+  <circle cx="720" cy="47" r="3" fill="#1f2937" stroke="#374151" stroke-width="0.5"/>
+  <circle cx="720" cy="47" r="1" fill="#374151"/>
+
+  <!-- Laptop hinge -->
+  <rect x="340" y="467" width="760" height="5" rx="2.5" fill="#374151"/>
+
+  <!-- Floating UI annotation labels -->
+  <!-- Left annotation -->
+  <g opacity="0.7">
+    <rect x="60" y="180" width="180" height="60" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="150" y="200" font-family="system-ui, sans-serif" font-size="10" fill="#f59e0b" text-anchor="middle" font-weight="700">Buy Now → Купить</text>
+    <text x="150" y="216" font-family="system-ui, sans-serif" font-size="10" fill="#f59e0b" text-anchor="middle" font-weight="700">Add to Cart → В корзину</text>
+    <text x="150" y="232" font-family="system-ui, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Кнопки на русском</text>
+    <!-- Connection line -->
+    <line x1="240" y1="210" x2="310" y2="210" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Right annotation -->
+  <g opacity="0.7">
+    <rect x="1180" y="180" width="190" height="60" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+    <text x="1275" y="200" font-family="system-ui, sans-serif" font-size="10" fill="#22c55e" text-anchor="middle" font-weight="700">Checkout → Оформить</text>
+    <text x="1275" y="216" font-family="system-ui, sans-serif" font-size="10" fill="#22c55e" text-anchor="middle" font-weight="700">Subscribe → Подписаться</text>
+    <text x="1275" y="232" font-family="system-ui, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">Навигация на русском</text>
+    <line x1="1180" y1="210" x2="1130" y2="210" stroke="#334155" stroke-width="1" stroke-dasharray="4,4"/>
+  </g>
+
+  <!-- Top badge -->
+  <g opacity="0.8">
+    <rect x="580" y="8" width="280" height="28" rx="14" fill="#1e293b" stroke="#6366f1" stroke-width="1"/>
+    <text x="720" y="26" font-family="system-ui, sans-serif" font-size="11" fill="#a5b4fc" text-anchor="middle" font-weight="600">168-ФЗ • Интернет-магазины • E-commerce</text>
+  </g>
+</svg>

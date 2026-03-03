@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <pattern id="bb-bricks" x="0" y="0" width="60" height="30" patternUnits="userSpaceOnUse">
+      <rect width="60" height="30" fill="#1a1520"/>
+      <rect x="1" y="1" width="28" height="13" rx="1" fill="#251e2e" opacity="0.8"/>
+      <rect x="31" y="1" width="28" height="13" rx="1" fill="#2a2235" opacity="0.7"/>
+      <rect x="16" y="16" width="28" height="13" rx="1" fill="#231c2c" opacity="0.75"/>
+      <rect x="46" y="16" width="13" height="13" rx="1" fill="#271f30" opacity="0.65"/>
+      <rect x="0" y="16" width="14" height="13" rx="1" fill="#2c2438" opacity="0.7"/>
+    </pattern>
+    <radialGradient id="bb-windowGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#d97706" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0f0e17" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="bb-neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bb-signGlow" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="bb-poleStripes" x1="0" y1="0" x2="0" y2="1" spreadMethod="repeat" gradientTransform="rotate(25)">
+      <stop offset="0%" stop-color="#dc2626"/><stop offset="33%" stop-color="#dc2626"/>
+      <stop offset="33%" stop-color="#ffffff"/><stop offset="66%" stop-color="#ffffff"/>
+      <stop offset="66%" stop-color="#2563eb"/><stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="bb-poleGlow" x="-50%" y="-10%" width="200%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Red warning glow -->
+    <filter id="bb-redGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="bb-ambient" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#0f0e17" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Red border glow -->
+    <filter id="bb-redBorder" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#ef4444" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0f0e17"/>
+
+  <!-- Sidewalk -->
+  <rect x="0" y="490" width="800" height="110" fill="#1a1a2e"/>
+  <rect x="0" y="490" width="800" height="3" fill="#2a2a40" opacity="0.4"/>
+  <line x1="0" y1="530" x2="800" y2="530" stroke="#222240" stroke-width="1" opacity="0.3"/>
+  <line x1="0" y1="565" x2="800" y2="565" stroke="#222240" stroke-width="1" opacity="0.3"/>
+
+  <!-- Brick wall -->
+  <rect x="60" y="30" width="680" height="460" fill="url(#bb-bricks)"/>
+  <rect x="60" y="30" width="680" height="460" fill="url(#bb-ambient)"/>
+  <rect x="60" y="30" width="680" height="460" fill="none" stroke="#332944" stroke-width="2"/>
+
+  <!-- Sign board - ENGLISH ONLY -->
+  <rect x="200" y="60" width="400" height="90" rx="6" fill="#0a0a14" stroke="#3a3050" stroke-width="2"/>
+  <rect x="208" y="68" width="384" height="74" rx="3" fill="none" stroke="#4a3860" stroke-width="1" opacity="0.4"/>
+  <!-- English only text -->
+  <text x="400" y="118" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700" fill="#f59e0b" letter-spacing="6" filter="url(#bb-signGlow)">BARBERSHOP</text>
+  <!-- Decorative lines -->
+  <line x1="240" y1="88" x2="320" y2="88" stroke="#f59e0b" stroke-width="1" opacity="0.3"/>
+  <line x1="480" y1="88" x2="560" y2="88" stroke="#f59e0b" stroke-width="1" opacity="0.3"/>
+
+  <!-- Left window -->
+  <rect x="120" y="200" width="180" height="260" rx="4" fill="#1a1520" stroke="#3a3050" stroke-width="2"/>
+  <rect x="126" y="206" width="168" height="248" rx="2" fill="#0d1117"/>
+  <rect x="126" y="206" width="168" height="248" rx="2" fill="url(#bb-windowGlow)"/>
+  <!-- Chair silhouette -->
+  <rect x="165" y="360" width="50" height="55" rx="8" fill="#3d2b1a" opacity="0.6"/>
+  <rect x="155" y="350" width="70" height="18" rx="6" fill="#4a3520" opacity="0.5"/>
+  <rect x="182" y="415" width="16" height="25" rx="2" fill="#2a2a3a" opacity="0.4"/>
+  <!-- Mirror -->
+  <ellipse cx="190" cy="280" rx="22" ry="32" fill="#1a2030" stroke="#333350" stroke-width="1" opacity="0.4"/>
+
+  <!-- Door frame -->
+  <rect x="370" y="190" width="170" height="300" rx="4" fill="#1a1520" stroke="#4a3860" stroke-width="3"/>
+  <!-- Door panels -->
+  <rect x="380" y="200" width="72" height="100" rx="2" fill="#2a1f35" stroke="#3a3050" stroke-width="1"/>
+  <rect x="458" y="200" width="72" height="100" rx="2" fill="#2a1f35" stroke="#3a3050" stroke-width="1"/>
+  <!-- Door glass -->
+  <rect x="380" y="200" width="150" height="55" rx="2" fill="#0d1117" opacity="0.5"/>
+  <rect x="380" y="200" width="150" height="55" rx="2" fill="url(#bb-windowGlow)" opacity="0.4"/>
+  <!-- Door handle -->
+  <rect x="448" y="340" width="5" height="35" rx="2.5" fill="#c0a060"/>
+  <rect x="456" y="340" width="5" height="35" rx="2.5" fill="#c0a060"/>
+  <!-- Door bottom -->
+  <rect x="380" y="310" width="72" height="170" rx="2" fill="#231a2e" stroke="#3a3050" stroke-width="1"/>
+  <rect x="458" y="310" width="72" height="170" rx="2" fill="#231a2e" stroke="#3a3050" stroke-width="1"/>
+  <!-- OPEN sign (English!) -->
+  <rect x="425" y="272" width="60" height="24" rx="4" fill="#0a0a14" stroke="#4a3860" stroke-width="1"/>
+  <text x="455" y="289" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f59e0b">OPEN</text>
+
+  <!-- Awning -->
+  <polygon points="340,185 570,185 555,170 355,170" fill="#1a1028" stroke="#3a3050" stroke-width="1"/>
+
+  <!-- Barber Pole (right of door) -->
+  <g transform="translate(580, 200)">
+    <rect x="-2" y="-10" width="28" height="12" rx="3" fill="#3a3050"/>
+    <rect x="2" y="2" width="20" height="145" rx="10" fill="url(#bb-poleStripes)" filter="url(#bb-poleGlow)"/>
+    <rect x="2" y="2" width="20" height="145" rx="10" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <rect x="7" y="6" width="4" height="137" rx="2" fill="rgba(255,255,255,0.08)"/>
+    <rect x="0" y="-2" width="24" height="7" rx="3.5" fill="#c0a060"/>
+    <rect x="0" y="145" width="24" height="7" rx="3.5" fill="#c0a060"/>
+    <circle cx="12" cy="75" r="25" fill="rgba(220,38,38,0.06)"/>
+  </g>
+
+  <!-- Right window -->
+  <rect x="630" y="200" width="60" height="260" rx="4" fill="#1a1520" stroke="#3a3050" stroke-width="2"/>
+  <rect x="634" y="206" width="52" height="248" rx="2" fill="#0d1117"/>
+  <rect x="634" y="206" width="52" height="248" rx="2" fill="url(#bb-windowGlow)" opacity="0.6"/>
+
+  <!-- Wall lights -->
+  <g transform="translate(340, 180)">
+    <rect x="-3" y="0" width="12" height="6" rx="2" fill="#3a3050"/>
+    <circle cx="3" cy="0" r="5" fill="#f59e0b" opacity="0.35" filter="url(#bb-neonGlow)"/>
+    <circle cx="3" cy="0" r="2.5" fill="#fbbf24" opacity="0.7"/>
+  </g>
+  <g transform="translate(570, 180)">
+    <rect x="-3" y="0" width="12" height="6" rx="2" fill="#3a3050"/>
+    <circle cx="3" cy="0" r="5" fill="#f59e0b" opacity="0.35" filter="url(#bb-neonGlow)"/>
+    <circle cx="3" cy="0" r="2.5" fill="#fbbf24" opacity="0.7"/>
+  </g>
+
+  <!-- Step -->
+  <rect x="350" y="486" width="210" height="8" rx="2" fill="#2a2540" stroke="#3a3050" stroke-width="1"/>
+
+  <!-- RED WARNING INDICATOR -->
+  <!-- Red border glow around whole image -->
+  <rect x="3" y="3" width="794" height="594" rx="12" fill="none" stroke="#ef4444" stroke-width="3" opacity="0.5" filter="url(#bb-redBorder)"/>
+
+  <!-- Red X badge -->
+  <g transform="translate(680, 40)">
+    <circle cx="40" cy="40" r="36" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="2"/>
+    <circle cx="40" cy="40" r="28" fill="#1a0a0a"/>
+    <line x1="26" y1="26" x2="54" y2="54" stroke="#ef4444" stroke-width="4" stroke-linecap="round"/>
+    <line x1="54" y1="26" x2="26" y2="54" stroke="#ef4444" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Warning label -->
+  <g transform="translate(620, 120)">
+    <rect x="0" y="0" width="140" height="32" rx="6" fill="rgba(239,68,68,0.15)" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
+    <text x="70" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ef4444">Нарушение 168-ФЗ</text>
+  </g>
+</svg>

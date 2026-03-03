@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <pattern id="ba-bricks" x="0" y="0" width="60" height="30" patternUnits="userSpaceOnUse">
+      <rect width="60" height="30" fill="#1a1520"/>
+      <rect x="1" y="1" width="28" height="13" rx="1" fill="#251e2e" opacity="0.8"/>
+      <rect x="31" y="1" width="28" height="13" rx="1" fill="#2a2235" opacity="0.7"/>
+      <rect x="16" y="16" width="28" height="13" rx="1" fill="#231c2c" opacity="0.75"/>
+      <rect x="46" y="16" width="13" height="13" rx="1" fill="#271f30" opacity="0.65"/>
+      <rect x="0" y="16" width="14" height="13" rx="1" fill="#2c2438" opacity="0.7"/>
+    </pattern>
+    <radialGradient id="ba-windowGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#d97706" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0f0e17" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ba-neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ba-signGlow" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="ba-poleStripes" x1="0" y1="0" x2="0" y2="1" spreadMethod="repeat" gradientTransform="rotate(25)">
+      <stop offset="0%" stop-color="#dc2626"/><stop offset="33%" stop-color="#dc2626"/>
+      <stop offset="33%" stop-color="#ffffff"/><stop offset="66%" stop-color="#ffffff"/>
+      <stop offset="66%" stop-color="#2563eb"/><stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="ba-poleGlow" x="-50%" y="-10%" width="200%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="ba-ambient" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#0f0e17" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Green border glow -->
+    <filter id="ba-greenBorder" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#22c55e" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0f0e17"/>
+
+  <!-- Sidewalk -->
+  <rect x="0" y="490" width="800" height="110" fill="#1a1a2e"/>
+  <rect x="0" y="490" width="800" height="3" fill="#2a2a40" opacity="0.4"/>
+  <line x1="0" y1="530" x2="800" y2="530" stroke="#222240" stroke-width="1" opacity="0.3"/>
+  <line x1="0" y1="565" x2="800" y2="565" stroke="#222240" stroke-width="1" opacity="0.3"/>
+
+  <!-- Brick wall -->
+  <rect x="60" y="30" width="680" height="460" fill="url(#ba-bricks)"/>
+  <rect x="60" y="30" width="680" height="460" fill="url(#ba-ambient)"/>
+  <rect x="60" y="30" width="680" height="460" fill="none" stroke="#332944" stroke-width="2"/>
+
+  <!-- Sign board - BILINGUAL -->
+  <rect x="180" y="55" width="440" height="110" rx="6" fill="#0a0a14" stroke="#3a3050" stroke-width="2"/>
+  <rect x="188" y="63" width="424" height="94" rx="3" fill="none" stroke="#4a3860" stroke-width="1" opacity="0.4"/>
+  <!-- Russian text on top -->
+  <text x="400" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="26" font-weight="700" fill="#ffffff" filter="url(#ba-signGlow)">Мужская парикмахерская</text>
+  <!-- English text below -->
+  <text x="400" y="140" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#f59e0b" letter-spacing="5" filter="url(#ba-signGlow)">BARBERSHOP</text>
+  <!-- Decorative lines -->
+  <line x1="230" y1="112" x2="310" y2="112" stroke="#f59e0b" stroke-width="1" opacity="0.3"/>
+  <line x1="490" y1="112" x2="570" y2="112" stroke="#f59e0b" stroke-width="1" opacity="0.3"/>
+
+  <!-- Left window -->
+  <rect x="120" y="210" width="180" height="250" rx="4" fill="#1a1520" stroke="#3a3050" stroke-width="2"/>
+  <rect x="126" y="216" width="168" height="238" rx="2" fill="#0d1117"/>
+  <rect x="126" y="216" width="168" height="238" rx="2" fill="url(#ba-windowGlow)"/>
+  <!-- Chair silhouette -->
+  <rect x="165" y="360" width="50" height="55" rx="8" fill="#3d2b1a" opacity="0.6"/>
+  <rect x="155" y="350" width="70" height="18" rx="6" fill="#4a3520" opacity="0.5"/>
+  <rect x="182" y="415" width="16" height="22" rx="2" fill="#2a2a3a" opacity="0.4"/>
+  <!-- Mirror -->
+  <ellipse cx="190" cy="280" rx="22" ry="32" fill="#1a2030" stroke="#333350" stroke-width="1" opacity="0.4"/>
+
+  <!-- Door frame -->
+  <rect x="370" y="200" width="170" height="290" rx="4" fill="#1a1520" stroke="#4a3860" stroke-width="3"/>
+  <!-- Door panels -->
+  <rect x="380" y="210" width="72" height="100" rx="2" fill="#2a1f35" stroke="#3a3050" stroke-width="1"/>
+  <rect x="458" y="210" width="72" height="100" rx="2" fill="#2a1f35" stroke="#3a3050" stroke-width="1"/>
+  <!-- Door glass -->
+  <rect x="380" y="210" width="150" height="55" rx="2" fill="#0d1117" opacity="0.5"/>
+  <rect x="380" y="210" width="150" height="55" rx="2" fill="url(#ba-windowGlow)" opacity="0.4"/>
+  <!-- Door handle -->
+  <rect x="448" y="345" width="5" height="35" rx="2.5" fill="#c0a060"/>
+  <rect x="456" y="345" width="5" height="35" rx="2.5" fill="#c0a060"/>
+  <!-- Door bottom -->
+  <rect x="380" y="320" width="72" height="160" rx="2" fill="#231a2e" stroke="#3a3050" stroke-width="1"/>
+  <rect x="458" y="320" width="72" height="160" rx="2" fill="#231a2e" stroke="#3a3050" stroke-width="1"/>
+  <!-- "Открыто" sign (Russian!) -->
+  <rect x="418" y="278" width="74" height="24" rx="4" fill="#0a0a14" stroke="#4a3860" stroke-width="1"/>
+  <text x="455" y="295" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#22c55e">Открыто</text>
+
+  <!-- Awning -->
+  <polygon points="340,195 570,195 555,180 355,180" fill="#1a1028" stroke="#3a3050" stroke-width="1"/>
+
+  <!-- Barber Pole (right of door) -->
+  <g transform="translate(580, 210)">
+    <rect x="-2" y="-10" width="28" height="12" rx="3" fill="#3a3050"/>
+    <rect x="2" y="2" width="20" height="145" rx="10" fill="url(#ba-poleStripes)" filter="url(#ba-poleGlow)"/>
+    <rect x="2" y="2" width="20" height="145" rx="10" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <rect x="7" y="6" width="4" height="137" rx="2" fill="rgba(255,255,255,0.08)"/>
+    <rect x="0" y="-2" width="24" height="7" rx="3.5" fill="#c0a060"/>
+    <rect x="0" y="145" width="24" height="7" rx="3.5" fill="#c0a060"/>
+    <circle cx="12" cy="75" r="25" fill="rgba(220,38,38,0.06)"/>
+  </g>
+
+  <!-- Right window -->
+  <rect x="630" y="210" width="60" height="250" rx="4" fill="#1a1520" stroke="#3a3050" stroke-width="2"/>
+  <rect x="634" y="216" width="52" height="238" rx="2" fill="#0d1117"/>
+  <rect x="634" y="216" width="52" height="238" rx="2" fill="url(#ba-windowGlow)" opacity="0.6"/>
+
+  <!-- Wall lights -->
+  <g transform="translate(340, 190)">
+    <rect x="-3" y="0" width="12" height="6" rx="2" fill="#3a3050"/>
+    <circle cx="3" cy="0" r="5" fill="#f59e0b" opacity="0.35" filter="url(#ba-neonGlow)"/>
+    <circle cx="3" cy="0" r="2.5" fill="#fbbf24" opacity="0.7"/>
+  </g>
+  <g transform="translate(570, 190)">
+    <rect x="-3" y="0" width="12" height="6" rx="2" fill="#3a3050"/>
+    <circle cx="3" cy="0" r="5" fill="#f59e0b" opacity="0.35" filter="url(#ba-neonGlow)"/>
+    <circle cx="3" cy="0" r="2.5" fill="#fbbf24" opacity="0.7"/>
+  </g>
+
+  <!-- Step -->
+  <rect x="350" y="486" width="210" height="8" rx="2" fill="#2a2540" stroke="#3a3050" stroke-width="1"/>
+
+  <!-- GREEN SUCCESS INDICATOR -->
+  <rect x="3" y="3" width="794" height="594" rx="12" fill="none" stroke="#22c55e" stroke-width="3" opacity="0.45" filter="url(#ba-greenBorder)"/>
+
+  <!-- Green checkmark badge -->
+  <g transform="translate(680, 40)">
+    <circle cx="40" cy="40" r="36" fill="rgba(34,197,94,0.12)" stroke="#22c55e" stroke-width="2"/>
+    <circle cx="40" cy="40" r="28" fill="#0a1a0a"/>
+    <polyline points="26,40 36,50 56,30" fill="none" stroke="#22c55e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Success label -->
+  <g transform="translate(618, 120)">
+    <rect x="0" y="0" width="144" height="32" rx="6" fill="rgba(34,197,94,0.12)" stroke="rgba(34,197,94,0.3)" stroke-width="1"/>
+    <text x="72" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#22c55e">Соответствует 168-ФЗ</text>
+  </g>
+</svg>

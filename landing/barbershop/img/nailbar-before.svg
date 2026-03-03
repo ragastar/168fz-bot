@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <!-- Subtle wall texture -->
+    <pattern id="nb-wallTex" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#1a1a2e"/>
+      <rect x="0" y="0" width="20" height="20" fill="#1c1c30" opacity="0.4"/>
+      <rect x="20" y="20" width="20" height="20" fill="#1e1e34" opacity="0.3"/>
+    </pattern>
+    <!-- Pink neon glow -->
+    <filter id="nb-pinkNeon" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="nb-pinkGlowBig" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="16" result="blur"/>
+      <feMerge><feMergeNode in="blur"/></feMerge>
+    </filter>
+    <!-- Window reflection -->
+    <linearGradient id="nb-glassReflect" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.04"/>
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Daytime ambient -->
+    <radialGradient id="nb-daylight" cx="50%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#374151" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#111827" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Red warning glow -->
+    <filter id="nb-redBorder" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#ef4444" flood-opacity="0.4"/>
+    </filter>
+    <filter id="nb-redGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background / Sky -->
+  <rect width="800" height="600" fill="#111827"/>
+  <rect width="800" height="600" fill="url(#nb-daylight)"/>
+
+  <!-- Sidewalk -->
+  <rect x="0" y="490" width="800" height="110" fill="#1f2937"/>
+  <rect x="0" y="490" width="800" height="2" fill="#374151" opacity="0.4"/>
+  <line x1="0" y1="530" x2="800" y2="530" stroke="#2a3040" stroke-width="1" opacity="0.3"/>
+
+  <!-- Building facade - white/light minimalist -->
+  <rect x="80" y="50" width="640" height="440" rx="2" fill="#1e2238"/>
+  <rect x="80" y="50" width="640" height="440" fill="url(#nb-wallTex)" opacity="0.5"/>
+  <!-- Subtle border -->
+  <rect x="80" y="50" width="640" height="440" rx="2" fill="none" stroke="#2d3348" stroke-width="1"/>
+
+  <!-- Upper facade trim -->
+  <rect x="80" y="50" width="640" height="8" fill="#252a40"/>
+
+  <!-- Pink neon sign - ENGLISH ONLY: "NAIL BAR" -->
+  <g transform="translate(400, 105)">
+    <!-- Neon glow background -->
+    <text x="0" y="0" text-anchor="middle" font-family="system-ui, sans-serif" font-size="52" font-weight="800" fill="#ec4899" opacity="0.3" filter="url(#nb-pinkGlowBig)">NAIL BAR</text>
+    <!-- Neon text -->
+    <text x="0" y="0" text-anchor="middle" font-family="system-ui, sans-serif" font-size="52" font-weight="800" fill="#ec4899" filter="url(#nb-pinkNeon)">NAIL BAR</text>
+    <!-- Highlight on neon -->
+    <text x="0" y="0" text-anchor="middle" font-family="system-ui, sans-serif" font-size="52" font-weight="800" fill="#f9a8d4" opacity="0.4">NAIL BAR</text>
+  </g>
+
+  <!-- Large glass window -->
+  <rect x="120" y="170" width="370" height="300" rx="4" fill="#0d1117" stroke="#2d3348" stroke-width="2"/>
+  <!-- Glass reflection -->
+  <rect x="120" y="170" width="370" height="300" rx="4" fill="url(#nb-glassReflect)"/>
+  <!-- Interior hint - manicure table -->
+  <rect x="200" y="360" width="120" height="50" rx="4" fill="#1a1a30" opacity="0.5"/>
+  <rect x="220" y="350" width="80" height="12" rx="2" fill="#252540" opacity="0.4"/>
+  <!-- Nail polish bottles silhouette -->
+  <rect x="160" y="220" width="8" height="25" rx="2" fill="#ec4899" opacity="0.2"/>
+  <rect x="175" y="218" width="8" height="27" rx="2" fill="#f472b6" opacity="0.15"/>
+  <rect x="190" y="221" width="8" height="24" rx="2" fill="#db2777" opacity="0.18"/>
+  <rect x="205" y="219" width="8" height="26" rx="2" fill="#ec4899" opacity="0.14"/>
+  <!-- Shelf -->
+  <rect x="150" y="246" width="80" height="3" rx="1" fill="#2d3348" opacity="0.4"/>
+  <!-- Window nail art stickers -->
+  <circle cx="380" cy="250" r="18" fill="none" stroke="#ec4899" stroke-width="1" opacity="0.2"/>
+  <circle cx="420" cy="270" r="14" fill="none" stroke="#f472b6" stroke-width="1" opacity="0.15"/>
+  <!-- Light reflection streak -->
+  <line x1="140" y1="175" x2="180" y2="460" stroke="#ffffff" stroke-width="1" opacity="0.04"/>
+
+  <!-- Door -->
+  <rect x="530" y="180" width="140" height="300" rx="4" fill="#161a2e" stroke="#2d3348" stroke-width="2"/>
+  <!-- Door glass panel -->
+  <rect x="540" y="190" width="120" height="160" rx="2" fill="#0d1117"/>
+  <rect x="540" y="190" width="120" height="160" rx="2" fill="url(#nb-glassReflect)"/>
+  <!-- Door handle -->
+  <rect x="548" y="350" width="40" height="5" rx="2.5" fill="#6b7280"/>
+  <!-- Door bottom panel -->
+  <rect x="540" y="360" width="120" height="110" rx="2" fill="#1a1e32"/>
+
+  <!-- Sandwich board (штендер) near entrance -->
+  <g transform="translate(100, 400)">
+    <!-- Board legs -->
+    <line x1="5" y1="0" x2="-5" y2="90" stroke="#4b5563" stroke-width="2"/>
+    <line x1="65" y1="0" x2="75" y2="90" stroke="#4b5563" stroke-width="2"/>
+    <!-- Board face -->
+    <rect x="0" y="0" width="70" height="80" rx="3" fill="#1a1a2e" stroke="#374151" stroke-width="1"/>
+    <!-- Board content - English -->
+    <text x="35" y="22" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#e5e7eb">Gel nails</text>
+    <line x1="10" y1="30" x2="60" y2="30" stroke="#374151" stroke-width="0.5"/>
+    <text x="35" y="44" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#e5e7eb">Pedicure</text>
+    <line x1="10" y1="52" x2="60" y2="52" stroke="#374151" stroke-width="0.5"/>
+    <text x="35" y="66" text-anchor="middle" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#e5e7eb">Shellac</text>
+  </g>
+
+  <!-- Step -->
+  <rect x="510" y="480" width="180" height="12" rx="2" fill="#252a40" stroke="#2d3348" stroke-width="1"/>
+
+  <!-- RED WARNING INDICATOR -->
+  <rect x="3" y="3" width="794" height="594" rx="12" fill="none" stroke="#ef4444" stroke-width="3" opacity="0.5" filter="url(#nb-redBorder)"/>
+
+  <!-- Red X badge -->
+  <g transform="translate(680, 40)">
+    <circle cx="40" cy="40" r="36" fill="rgba(239,68,68,0.15)" stroke="#ef4444" stroke-width="2"/>
+    <circle cx="40" cy="40" r="28" fill="#1a0a0a"/>
+    <line x1="26" y1="26" x2="54" y2="54" stroke="#ef4444" stroke-width="4" stroke-linecap="round"/>
+    <line x1="54" y1="26" x2="26" y2="54" stroke="#ef4444" stroke-width="4" stroke-linecap="round"/>
+  </g>
+
+  <!-- Warning label -->
+  <g transform="translate(620, 120)">
+    <rect x="0" y="0" width="140" height="32" rx="6" fill="rgba(239,68,68,0.15)" stroke="rgba(239,68,68,0.3)" stroke-width="1"/>
+    <text x="70" y="21" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#ef4444">Нарушение 168-ФЗ</text>
+  </g>
+</svg>

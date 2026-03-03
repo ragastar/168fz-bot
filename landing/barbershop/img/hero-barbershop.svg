@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600" width="1440" height="600">
+  <defs>
+    <!-- Brick pattern -->
+    <pattern id="bricks" x="0" y="0" width="60" height="30" patternUnits="userSpaceOnUse">
+      <rect width="60" height="30" fill="#1a1520"/>
+      <rect x="1" y="1" width="28" height="13" rx="1" fill="#251e2e" opacity="0.8"/>
+      <rect x="31" y="1" width="28" height="13" rx="1" fill="#2a2235" opacity="0.7"/>
+      <rect x="16" y="16" width="28" height="13" rx="1" fill="#231c2c" opacity="0.75"/>
+      <rect x="46" y="16" width="13" height="13" rx="1" fill="#271f30" opacity="0.65"/>
+      <rect x="0" y="16" width="14" height="13" rx="1" fill="#2c2438" opacity="0.7"/>
+    </pattern>
+    <!-- Window glow -->
+    <radialGradient id="windowGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#d97706" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0f0e17" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Neon glow filter -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Sign backlight -->
+    <filter id="signGlow" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Barber pole gradient -->
+    <linearGradient id="poleStripes" x1="0" y1="0" x2="0" y2="1" spreadMethod="repeat" gradientTransform="rotate(25)">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="33%" stop-color="#dc2626"/>
+      <stop offset="33%" stop-color="#ffffff"/>
+      <stop offset="66%" stop-color="#ffffff"/>
+      <stop offset="66%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <!-- Pole glow -->
+    <filter id="poleGlow" x="-50%" y="-10%" width="200%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Ambient light -->
+    <radialGradient id="ambientWarm" cx="50%" cy="60%" r="50%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0f0e17" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Street light glow -->
+    <radialGradient id="streetLight" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0f0e17" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Badge gradient -->
+    <linearGradient id="badgeGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky / Background -->
+  <rect width="1440" height="600" fill="#0f0e17"/>
+  <rect width="1440" height="600" fill="url(#streetLight)"/>
+
+  <!-- Sidewalk -->
+  <rect x="0" y="510" width="1440" height="90" fill="#1a1a2e"/>
+  <rect x="0" y="510" width="1440" height="3" fill="#2a2a40" opacity="0.5"/>
+  <!-- Sidewalk tiles -->
+  <line x1="0" y1="540" x2="1440" y2="540" stroke="#222240" stroke-width="1" opacity="0.3"/>
+  <line x1="0" y1="570" x2="1440" y2="570" stroke="#222240" stroke-width="1" opacity="0.3"/>
+
+  <!-- Main building brick wall -->
+  <rect x="220" y="40" width="1000" height="470" fill="url(#bricks)"/>
+  <!-- Wall border/frame -->
+  <rect x="220" y="40" width="1000" height="470" fill="none" stroke="#332944" stroke-width="2"/>
+
+  <!-- Ambient warm light on wall -->
+  <rect x="220" y="40" width="1000" height="470" fill="url(#ambientWarm)"/>
+
+  <!-- Sign board background -->
+  <rect x="420" y="80" width="600" height="130" rx="6" fill="#0a0a14" stroke="#3a3050" stroke-width="2"/>
+  <!-- Sign inner border -->
+  <rect x="428" y="88" width="584" height="114" rx="4" fill="none" stroke="#4a3860" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+
+  <!-- Russian text on sign -->
+  <text x="720" y="130" text-anchor="middle" font-family="system-ui, sans-serif" font-size="32" font-weight="700" fill="#ffffff" filter="url(#signGlow)">Мужская парикмахерская</text>
+
+  <!-- English text on sign - retro style -->
+  <text x="720" y="180" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700" fill="#f59e0b" letter-spacing="8" filter="url(#signGlow)">BARBERSHOP</text>
+
+  <!-- Small decorative lines on sign -->
+  <line x1="500" y1="148" x2="620" y2="148" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
+  <line x1="820" y1="148" x2="940" y2="148" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
+
+  <!-- Left window -->
+  <rect x="300" y="260" width="200" height="220" rx="4" fill="#1a1520" stroke="#3a3050" stroke-width="2"/>
+  <!-- Window glass -->
+  <rect x="306" y="266" width="188" height="208" rx="2" fill="#0d1117"/>
+  <!-- Window warm glow -->
+  <rect x="306" y="266" width="188" height="208" rx="2" fill="url(#windowGlow)"/>
+  <!-- Leather chair left (silhouette) -->
+  <rect x="340" y="380" width="50" height="60" rx="8" fill="#3d2b1a" opacity="0.7"/>
+  <rect x="330" y="370" width="70" height="20" rx="6" fill="#4a3520" opacity="0.6"/>
+  <!-- Chair base -->
+  <rect x="355" y="440" width="20" height="24" rx="2" fill="#2a2a3a" opacity="0.5"/>
+  <!-- Mirror silhouette -->
+  <ellipse cx="365" cy="320" rx="25" ry="35" fill="#1a2030" stroke="#333350" stroke-width="1" opacity="0.5"/>
+
+  <!-- Right window -->
+  <rect x="940" y="260" width="200" height="220" rx="4" fill="#1a1520" stroke="#3a3050" stroke-width="2"/>
+  <rect x="946" y="266" width="188" height="208" rx="2" fill="#0d1117"/>
+  <rect x="946" y="266" width="188" height="208" rx="2" fill="url(#windowGlow)"/>
+  <!-- Leather chair right -->
+  <rect x="1000" y="380" width="50" height="60" rx="8" fill="#3d2b1a" opacity="0.7"/>
+  <rect x="990" y="370" width="70" height="20" rx="6" fill="#4a3520" opacity="0.6"/>
+  <rect x="1015" y="440" width="20" height="24" rx="2" fill="#2a2a3a" opacity="0.5"/>
+  <ellipse cx="1025" cy="320" rx="25" ry="35" fill="#1a2030" stroke="#333350" stroke-width="1" opacity="0.5"/>
+
+  <!-- Door frame -->
+  <rect x="620" y="250" width="200" height="260" rx="4" fill="#1a1520" stroke="#4a3860" stroke-width="3"/>
+  <!-- Door panels -->
+  <rect x="630" y="260" width="85" height="115" rx="2" fill="#2a1f35" stroke="#3a3050" stroke-width="1"/>
+  <rect x="725" y="260" width="85" height="115" rx="2" fill="#2a1f35" stroke="#3a3050" stroke-width="1"/>
+  <!-- Door glass top -->
+  <rect x="630" y="260" width="180" height="60" rx="2" fill="#0d1117" opacity="0.6"/>
+  <rect x="630" y="260" width="180" height="60" rx="2" fill="url(#windowGlow)" opacity="0.5"/>
+  <!-- Door handle -->
+  <rect x="705" y="390" width="6" height="40" rx="3" fill="#c0a060"/>
+  <rect x="729" y="390" width="6" height="40" rx="3" fill="#c0a060"/>
+  <!-- Door bottom panels -->
+  <rect x="630" y="385" width="85" height="115" rx="2" fill="#231a2e" stroke="#3a3050" stroke-width="1"/>
+  <rect x="725" y="385" width="85" height="115" rx="2" fill="#231a2e" stroke="#3a3050" stroke-width="1"/>
+  <!-- "Открыто" sign on door -->
+  <rect x="680" y="340" width="80" height="28" rx="4" fill="#0a0a14" stroke="#4a3860" stroke-width="1"/>
+  <text x="720" y="360" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#22c55e">Открыто</text>
+
+  <!-- Awning above entrance -->
+  <polygon points="580,245 860,245 840,230 600,230" fill="#1a1028" stroke="#3a3050" stroke-width="1"/>
+
+  <!-- Barber Pole (left of door) -->
+  <g transform="translate(560, 260)">
+    <!-- Pole mount -->
+    <rect x="-2" y="-10" width="30" height="14" rx="3" fill="#3a3050"/>
+    <!-- Pole body -->
+    <rect x="2" y="4" width="22" height="160" rx="11" fill="url(#poleStripes)" filter="url(#poleGlow)"/>
+    <!-- Pole glass cylinder effect -->
+    <rect x="2" y="4" width="22" height="160" rx="11" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <!-- Highlight -->
+    <rect x="8" y="8" width="4" height="152" rx="2" fill="rgba(255,255,255,0.1)"/>
+    <!-- Pole caps -->
+    <rect x="0" y="0" width="26" height="8" rx="4" fill="#c0a060"/>
+    <rect x="0" y="160" width="26" height="8" rx="4" fill="#c0a060"/>
+    <!-- Pole glow circle -->
+    <circle cx="13" cy="84" r="30" fill="rgba(220,38,38,0.08)"/>
+  </g>
+
+  <!-- Small wall lights -->
+  <g transform="translate(510, 240)">
+    <rect x="-4" y="0" width="14" height="8" rx="2" fill="#3a3050"/>
+    <circle cx="3" cy="0" r="6" fill="#f59e0b" opacity="0.4" filter="url(#neonGlow)"/>
+    <circle cx="3" cy="0" r="3" fill="#fbbf24" opacity="0.8"/>
+  </g>
+  <g transform="translate(920, 240)">
+    <rect x="-4" y="0" width="14" height="8" rx="2" fill="#3a3050"/>
+    <circle cx="3" cy="0" r="6" fill="#f59e0b" opacity="0.4" filter="url(#neonGlow)"/>
+    <circle cx="3" cy="0" r="3" fill="#fbbf24" opacity="0.8"/>
+  </g>
+
+  <!-- Step at entrance -->
+  <rect x="600" y="505" width="240" height="10" rx="2" fill="#2a2540" stroke="#3a3050" stroke-width="1"/>
+
+  <!-- === Floating Annotation: Left side === -->
+  <g transform="translate(30, 120)">
+    <rect x="0" y="0" width="170" height="70" rx="8" fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+    <text x="14" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#818cf8">РУССКИЙ ТЕКСТ</text>
+    <text x="14" y="42" font-family="system-ui, sans-serif" font-size="10" fill="#a5b4fc" opacity="0.8">Основной язык —</text>
+    <text x="14" y="56" font-family="system-ui, sans-serif" font-size="10" fill="#a5b4fc" opacity="0.8">крупнее и выше</text>
+    <!-- Dashed line to sign -->
+    <line x1="170" y1="35" x2="430" y2="50" stroke="#6366f1" stroke-width="1" stroke-dasharray="6,4" opacity="0.5"/>
+    <circle cx="430" cy="50" r="4" fill="#6366f1" opacity="0.6"/>
+  </g>
+
+  <g transform="translate(30, 280)">
+    <rect x="0" y="0" width="170" height="70" rx="8" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.25)" stroke-width="1"/>
+    <text x="14" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#fbbf24">BARBER POLE</text>
+    <text x="14" y="42" font-family="system-ui, sans-serif" font-size="10" fill="#fcd34d" opacity="0.8">Классический элемент</text>
+    <text x="14" y="56" font-family="system-ui, sans-serif" font-size="10" fill="#fcd34d" opacity="0.8">декора — не нарушение</text>
+    <line x1="170" y1="40" x2="555" y2="340" stroke="#f59e0b" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
+    <circle cx="555" cy="340" r="4" fill="#f59e0b" opacity="0.5"/>
+  </g>
+
+  <!-- === Floating Annotation: Right side === -->
+  <g transform="translate(1240, 120)">
+    <rect x="0" y="0" width="170" height="70" rx="8" fill="rgba(236,72,153,0.1)" stroke="rgba(236,72,153,0.25)" stroke-width="1"/>
+    <text x="14" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#f472b6">ENGLISH NAME</text>
+    <text x="14" y="42" font-family="system-ui, sans-serif" font-size="10" fill="#f9a8d4" opacity="0.8">Можно оставить —</text>
+    <text x="14" y="56" font-family="system-ui, sans-serif" font-size="10" fill="#f9a8d4" opacity="0.8">ниже и мельче</text>
+    <line x1="0" y1="40" x2="-230" y2="60" stroke="#ec4899" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
+    <circle cx="-230" cy="60" r="4" fill="#ec4899" opacity="0.5"/>
+  </g>
+
+  <g transform="translate(1240, 300)">
+    <rect x="0" y="0" width="170" height="55" rx="8" fill="rgba(34,197,94,0.1)" stroke="rgba(34,197,94,0.25)" stroke-width="1"/>
+    <text x="14" y="24" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#4ade80">ТАБЛИЧКА</text>
+    <text x="14" y="42" font-family="system-ui, sans-serif" font-size="10" fill="#86efac" opacity="0.8">«Открыто» на русском</text>
+    <line x1="0" y1="30" x2="-500" y2="105" stroke="#22c55e" stroke-width="1" stroke-dasharray="6,4" opacity="0.4"/>
+    <circle cx="-500" cy="105" r="4" fill="#22c55e" opacity="0.5"/>
+  </g>
+
+  <!-- 168-FZ Badge -->
+  <g transform="translate(1280, 500)">
+    <rect x="0" y="0" width="120" height="44" rx="22" fill="url(#badgeGrad)" opacity="0.9"/>
+    <text x="60" y="19" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ffffff" opacity="0.8">Соответствует</text>
+    <text x="60" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff">168-ФЗ</text>
+  </g>
+
+  <!-- Subtle vignette overlay -->
+  <rect width="1440" height="600" fill="none" stroke="#0f0e17" stroke-width="80" opacity="0.3"/>
+</svg>
