@@ -23,7 +23,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/style.css">
 
     <!-- Schema.org: BreadcrumbList -->
@@ -57,9 +58,18 @@
       "description": "Таблица запрещённых иностранных слов на вывесках по 168-ФЗ с правильными переводами.",
       "datePublished": "2026-03-03",
       "dateModified": "2026-03-03",
+      "author": {
+        "@type": "Organization",
+        "name": "Неон Бутик",
+        "url": "https://neon.boutique"
+      },
       "publisher": {
         "@type": "Organization",
-        "name": "проверьвывеску.рф"
+        "name": "проверьвывеску.рф",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://xn--b1aaakc4awhjdoz3hm.xn--p1ai/favicon.svg"
+        }
       }
     }
     </script>
